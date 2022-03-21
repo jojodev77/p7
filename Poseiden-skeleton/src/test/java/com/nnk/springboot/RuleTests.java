@@ -21,7 +21,7 @@ public class RuleTests {
 
 	@Test
 	public void ruleTest() {
-		RuleName rule = new RuleName("Rule Name", "Description", "Json", "Template", "SQL", "SQL Part");
+		RuleName rule = new RuleName();
 
 		// Save
 		rule = ruleNameRepository.save(rule);
@@ -38,7 +38,7 @@ public class RuleTests {
 		Assert.assertTrue(listResult.size() > 0);
 
 		// Delete
-		Integer id = rule.getId();
+		Integer id = (int) rule.getId();
 		ruleNameRepository.delete(rule);
 		Optional<RuleName> ruleList = ruleNameRepository.findById(id);
 		Assert.assertFalse(ruleList.isPresent());

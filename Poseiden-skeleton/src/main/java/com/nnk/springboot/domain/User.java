@@ -15,7 +15,7 @@ public class User {
     private String password;
     @NotBlank(message = "FullName is mandatory")
     private String fullname;
-    @NotBlank(message = "Role is mandatory")
+    @NotBlank(message = "email is mandatory")
     private String role;
 
     public Integer getId() {
@@ -33,6 +33,7 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+    
 
     public String getPassword() {
         return password;

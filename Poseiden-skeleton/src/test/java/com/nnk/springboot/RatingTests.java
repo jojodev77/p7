@@ -21,7 +21,7 @@ public class RatingTests {
 
 	@Test
 	public void ratingTest() {
-		Rating rating = new Rating("Moodys Rating", "Sand PRating", "Fitch Rating", 10);
+		Rating rating = new Rating();
 
 		// Save
 		rating = ratingRepository.save(rating);
@@ -38,7 +38,7 @@ public class RatingTests {
 		Assert.assertTrue(listResult.size() > 0);
 
 		// Delete
-		Integer id = rating.getId();
+		Integer id = (int) rating.getId();
 		ratingRepository.delete(rating);
 		Optional<Rating> ratingList = ratingRepository.findById(id);
 		Assert.assertFalse(ratingList.isPresent());

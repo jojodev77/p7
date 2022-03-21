@@ -21,7 +21,7 @@ public class TradeTests {
 
 	@Test
 	public void tradeTest() {
-		Trade trade = new Trade("Trade Account", "Type");
+		Trade trade = new Trade();
 
 		// Save
 		trade = tradeRepository.save(trade);
@@ -38,7 +38,7 @@ public class TradeTests {
 		Assert.assertTrue(listResult.size() > 0);
 
 		// Delete
-		Integer id = trade.getTradeId();
+		Integer id = (int) trade.getTradeId();
 		tradeRepository.delete(trade);
 		Optional<Trade> tradeList = tradeRepository.findById(id);
 		Assert.assertFalse(tradeList.isPresent());
