@@ -35,22 +35,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests().antMatchers("/user/add/**", "/home/**", "/user/login/**", "//**" , "/user/list/**",  "/user/validate/**").permitAll()
     			.anyRequest().authenticated()
-                .and()
-                .userDetailsService(uds) // Setting the user details service to the custom implementation
-                .exceptionHandling()
-                    .authenticationEntryPoint(
-                            // Rejecting request as unauthorized when entry point is reached
-                            // If this point is reached it means that the current request requires authentication
-                            // and no JWT token was found attached to the Authorization header of the current request.
-                            (request, response, authException) ->
-                                    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized")
-                    )
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS); // Setting Session to be stateless
-
-        // Adding the JWT filter
-        http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+    			.and()
+                .formLogin()
+                    .loginPage("/login")
+                    .permitAll()
+                    .and()
+                .logout()
+                    .permitAll();
     }
 
     // Creating a bean for the password encoder

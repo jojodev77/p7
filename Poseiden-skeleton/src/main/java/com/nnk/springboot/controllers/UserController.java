@@ -40,18 +40,18 @@ public class UserController {
     @PostMapping("/user/login")
     public String signin( @Valid SigninDto signin, BindingResult binding, Model model) {
     	model.addAttribute("signin", signin);
-    	model.addAttribute("userDetail", userService.signin(signin));
-    	if (userService.signin(signin).getUsername() != null) {
-    		 return "redirect:/user/userHome";
+    	model.addAttribute("userDetails", userService.autoLogin(signin));
+    	if (userService.autoLogin(signin).getUsername() != null) {
+    		 return "user/userH";
 		} else {
 			return "user/login";
 		}
     	
     }
     
-    @GetMapping("/user/userHome")
+    @GetMapping("/user/userH")
     public String userHome( BindingResult binding, Model model) {
-    	return "user/userHome";
+    	return "user/userH";
     }
     
     
