@@ -1,26 +1,165 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<title>Home</title>
-<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+<meta charset="utf-8" />
+<title><a href="/home">Home</a></title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
 </head>
 <body>
-<div class="container">
+	<div class="container">
 
-	<div class="row">
-		<h2>Add New Bid</h2>
+		<div class="row">
+			<h2>Add New Bid</h2>
+		</div>
+
+		<div class="row">
+			<form action="#" th:action="@{/bidList/validate}"
+				th:object="${bidList}" method="post" class="form-horizontal"
+				style="width: 100%">
+				<div class="form-group">
+					<label for="account" class="col-sm-2 control-label">order
+						Number</label>
+					<div class="col-sm-10">
+						<input type="number" th:field="*{account}" id="account"
+							placeholder="account" class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('account')}"
+							th:errors="*{account}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="type" class="col-sm-2 control-label">sandP
+						Rating</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{type}" id="type" placeholder="type"
+							class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('type')}"
+							th:errors="*{type}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="bidQuantity" class="col-sm-2 control-label">bidQuantity</label>
+					<div class="col-sm-10">
+						<input type="number" th:field="*{bidQuantity}" id="bidQuantity"
+							placeholder="bidQuantity" class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('bidQuantity')}"
+							th:errors="*{bidQuantity}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="askQuantity" class="col-sm-2 control-label">askQuantity</label>
+					<div class="col-sm-10">
+						<input type="number" th:field="*{askQuantity}" id="askQuantity"
+							placeholder="askQuantity" class="col-4">
+						<p class="text-danger"
+							th:if="${#fields.hasErrors('askQuantity')}"
+							th:errors="*{askQuantity}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="security" class="col-sm-2 control-label">security</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{security}" id="security"
+							placeholder="security" class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('security')}"
+							th:errors="*{security}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">status</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{status}" id="security"
+							placeholder="status" class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('status')}"
+							th:errors="*{status}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="trader" class="col-sm-2 control-label">trader</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{trader}" id="trader"
+							placeholder="trader" class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('trader')}"
+							th:errors="*{trader}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="benchmark" class="col-sm-2 control-label">benchmark</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{benchmark}" id="benchmark"
+							placeholder="benchmark" class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('benchmark')}"
+							th:errors="*{benchmark}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="book" class="col-sm-2 control-label">book</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{book}" id="book" placeholder="book"
+							class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('book')}"
+							th:errors="*{book}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="creationName" class="col-sm-2 control-label">creationName</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{creationName}" id="creationName"
+							placeholder="creationName" class="col-4">
+						<p class="text-danger"
+							th:if="${#fields.hasErrors('creationName')}"
+							th:errors="*{creationName}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="revisionName" class="col-sm-2 control-label">revisionName</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{revisionName}" id="revisionName"
+							placeholder="revisionName" class="col-4">
+						<p class="text-danger"
+							th:if="${#fields.hasErrors('revisionName')}"
+							th:errors="*{revisionName}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="dealName" class="col-sm-2 control-label">dealName</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{dealName}" id="dealName"
+							placeholder="dealName" class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('dealName')}"
+							th:errors="*{dealName}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="sourceListId" class="col-sm-2 control-label">sourceListId</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{sourceListId}" id="sourceListId"
+							placeholder="sourceListId" class="col-4">
+						<p class="text-danger"
+							th:if="${#fields.hasErrors('sourceListId')}"
+							th:errors="*{sourceListId}"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="side" class="col-sm-2 control-label">side</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{side}" id="side" placeholder="side"
+							class="col-4">
+						<p class="text-danger" th:if="${#fields.hasErrors('side')}"
+							th:errors="*{side}"></p>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="col-sm-12">
+						<a class="btn btn-danger btn-sm" href="/bidList/list">Cancel</a> <input
+							class="btn btn-primary btn-sm" type="submit" value="Add bidList">
+					</div>
+				</div>
+			</form>
+		</div>
+
 	</div>
-
-	<div class="row">
-		<form action="#" th:action="@{/bidList/validate}" th:object="${bidList}" method="post" class="form-horizontal" style="width: 100%">
-			<!--
-			TODO: Create a form to input the values of Bid, there are 2 buttons: Save data and Cancel to the list Bid
-			 -->
-		</form>
-	</div>
-
-</div>
 </body>
 </html>

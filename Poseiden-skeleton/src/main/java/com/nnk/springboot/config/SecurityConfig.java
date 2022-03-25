@@ -33,13 +33,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable() // Disabling http basic
                 .cors() // Enabling cors
                 .and()
-                .authorizeRequests().antMatchers("/user/add/**", "/home/**", "/user/login/**", "//**" , "/user/list/**",  "/user/validate/**").permitAll()
+                .authorizeRequests().antMatchers("/user/add/**", "/home/**", "/css/styles/**", "/user/login/**", "//**" , "/user/list/**",  "/user/validate/**").permitAll()
     			.anyRequest().authenticated()
     			.and()
-                .formLogin()
-                    .loginPage("/login")
-                    .permitAll()
-                    .and()
+//                .formLogin()
+//                    .loginPage("/login")
+//                    .permitAll()
+//                    .and()
                 .logout()
                     .permitAll();
     }

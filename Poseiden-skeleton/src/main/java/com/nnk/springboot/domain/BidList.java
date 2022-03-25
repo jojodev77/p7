@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 public class BidList {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
 	long BidListId;
 	@NotBlank(message = "account is not blank")
 	String account;

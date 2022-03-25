@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class Trade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	long id;
 	long TradeId;
 	@NotBlank(message = "account is not blank")
 	String account;

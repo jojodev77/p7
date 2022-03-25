@@ -7,26 +7,28 @@ import javax.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class TradeDto {
+public class BidListDto {
 	long id;
-	long TradeId;
+	long BidListId;
 	String account;
 	String type;
-	double buyQuantity;
-	double sellQuantity;
-	double buyPrice;
-	double sellPrice;
-	LocalDateTime tradeDate;
+	double bidQuantity;
+	double askQuantity;
+	double bid;
+	double ask;
+	String benchmark;
+	LocalDateTime bidListDate;
+	String commentary;
 	String security;
 	String status;
 	String trader;
-	String benchmark;
 	String book;
 	String creationName;
 	LocalDateTime creationDate;
 	String revisionName;
 	LocalDateTime revisionDate;
 	String dealName;
-	String sourceListId; 
+	String dealType;
+	String sourceListId;
 	String side;
 }

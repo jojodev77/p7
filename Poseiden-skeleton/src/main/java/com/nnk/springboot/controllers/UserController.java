@@ -34,11 +34,13 @@ public class UserController {
     		ResponseEntity.status(400).body("");
 		}
     	model.addAttribute("signin", signin);
+    	System.out.println("dddddddddddd" + signin);
     	return "user/login";
     }
     
     @PostMapping("/user/login")
     public String signin( @Valid SigninDto signin, BindingResult binding, Model model) {
+    	System.out.println("dddddddddddd" + signin);
     	model.addAttribute("signin", signin);
     	model.addAttribute("userDetails", userService.autoLogin(signin));
     	if (userService.autoLogin(signin).getUsername() != null) {

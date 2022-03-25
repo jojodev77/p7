@@ -10,5 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface RatingRepository extends JpaRepository<Rating, Integer> {
 
 	Optional<Rating> findBySandPRating(String fitchRating);
+	Rating findById(long id);
 
 }

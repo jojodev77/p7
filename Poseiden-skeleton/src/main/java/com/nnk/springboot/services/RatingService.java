@@ -19,36 +19,36 @@ public class RatingService {
 	/**
 	 * @Description method for add rating
 	 */
-	public String addRating(RatingDto rating) {
+	public String addRating(Rating rating) {
+		if (rating == null) {
+			ResponseEntity.status(400).body("rating is null");
+		}
 		Optional<Rating> r = ratingRepository.findBySandPRating(rating.getFitchRating());
 		if (r.isPresent()) {
 			ResponseEntity.status(400).body("rating exist in database");
 		}
-		ratingRepository.save(r.get());
+		ratingRepository.save(rating);
 		return "rating add with success";
 	}
 	
 	/**
 	 * @Description method for update rating
 	 */
-	public String updateRating(RatingDto rating) {
-		Optional<Rating> r = ratingRepository.findBySandPRating(rating.getFitchRating());
+	public Rating updateRating(int id) {
+		Optional<Rating> r = Optional.ofNullable(ratingRepository.findById( id));
 		if (r.isEmpty()) {
 			ResponseEntity.status(400).body("rating not exist in database");
 		}
 		ratingRepository.save(r.get());
-		return "rating update with success";
+		return r.get();
 	}
 	
 	/**
 	 * @Description method for update rating
 	 */
 	public String deleteRating(long id) {
-		Optional<Rating> r = ratingRepository.findById((int) id);
-		if (r.isEmpty()) {
-			ResponseEntity.status(400).body("rating not exist in database");
-		}
-		ratingRepository.delete(r.get());
+		Rating r = ratingRepository.findById(id);
+		ratingRepository.delete(r);
 		return "rating delete with success";
 	}
 }
