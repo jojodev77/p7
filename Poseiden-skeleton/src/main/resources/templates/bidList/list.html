@@ -33,6 +33,23 @@
 					<th>Account</th>
 					<th>Type</th>
 					<th>Bid Quantity</th>
+					<th>askQuantity</th>
+					<th>bid</th>
+					<th>ask</th>
+					<th>benchmark</th>
+					<th>commentary</th>
+					<th>security</th>
+					<th>status</th>
+					<th>trader</th>
+					<th>book</th>
+					<th>creationName</th>
+					<th>creationDate</th>
+					<th>revisionName</th>
+					<th>revisionDate</th>
+					<th>dealName</th>
+					<th>dealType</th>
+					<th>sourceListId</th>
+					<th>side</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -42,6 +59,23 @@
 					<td th:text="${bid.account}"></td>
 					<td th:text="${bid.type}"></td>
 					<td style="width: 25%" th:text="${bid.bidQuantity}"></td>
+					<td style="width: 25%" th:text="${bid.askQuantity}"></td>
+					<td style="width: 25%" th:text="${bid.bid}"></td>
+					<td style="width: 25%" th:text="${bid.ask}"></td>
+					<td style="width: 25%" th:text="${bid.benchmark}"></td>
+					<td style="width: 25%" th:text="${bid.commentary}"></td>
+					<td style="width: 25%" th:text="${bid.security}"></td>
+					<td style="width: 25%" th:text="${bid.status}"></td>
+					<td style="width: 25%" th:text="${bid.trader}"></td>
+					<td style="width: 25%" th:text="${bid.book}"></td>
+					<td style="width: 25%" th:text="${bid.creationName}"></td>
+					<td style="width: 25%" th:text="${bid.creationDate}"></td>
+					<td style="width: 25%" th:text="${bid.revisionName}"></td>
+					<td style="width: 25%" th:text="${bid.revisionDate}"></td>
+					<td style="width: 25%" th:text="${bid.dealName}"></td>
+					<td style="width: 25%" th:text="${bid.dealType}"></td>
+					<td style="width: 25%" th:text="${bid.sourceListId}"></td>
+					<td style="width: 25%" th:text="${bid.side}"></td>
 					<td style="width: 15%" class="text-center">
 						<a th:href="@{/bidList/update/{id}(id=${bid.id})}" >Edit</a>&nbsp;|&nbsp;
 						<a th:href="@{/bidList/delete/{id}(id=${bid.id})}">Delete</a>

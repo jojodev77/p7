@@ -4,6 +4,8 @@ import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.services.TradeService;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +26,8 @@ public class TradeController {
 	
 	@Autowired
 	TradeRepository tradeRepository;
+	
+	private static final Logger log = LogManager.getLogger(TradeController.class);
 
     @RequestMapping("/trade/list")
     public String home(Model model)
@@ -42,8 +46,10 @@ public class TradeController {
     	if (!result.hasErrors()) {
 			model.addAttribute("trade", tradeService.addRrade(trade));
 			model.addAttribute("trade", tradeRepository.findAll());
+			log.info("success for  create trade");
 			return "trade/list";
 		} else {
+		log.warn("error for  create trade");
         return "trade/add";
 		}
     }
@@ -59,8 +65,10 @@ public class TradeController {
     	if (!result.hasErrors()) {
 			model.addAttribute("trade", trade);
 			tradeService.updateTrade(id, trade);
+			log.info("success for  update trade");
 			return "redirect:/trade/list";
 		}
+    	 log.warn("error for  update trade");
     	 return "trade/update";
     }
 
@@ -68,6 +76,7 @@ public class TradeController {
     public String deleteTrade(@PathVariable("id") Integer id, Model model) {
     	tradeService.deleteTrade(id);
 		model.addAttribute("trade", tradeRepository.findAll());
+		log.info("success for  delete trade");
         return "redirect:/trade/list";
     }
 }

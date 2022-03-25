@@ -5,6 +5,8 @@ import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.services.UserService;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,6 +30,8 @@ public class UserController {
     @Autowired
     UserService userService;
     
+    private static final Logger log = LogManager.getLogger(UserController.class);
+    
     @GetMapping("/user/login")
     public String login( @ModelAttribute SigninDto signin, BindingResult binding, Model model) {
     	if (binding.hasErrors()) {
@@ -44,8 +48,10 @@ public class UserController {
     	model.addAttribute("signin", signin);
     	model.addAttribute("userDetails", userService.autoLogin(signin));
     	if (userService.autoLogin(signin).getUsername() != null) {
+    		log.info("success for  signin");
     		 return "user/userH";
 		} else {
+			log.warn("error for  signin");
 			return "user/login";
 		}
     	
@@ -77,8 +83,10 @@ public class UserController {
             user.setPassword(encoder.encode(user.getPassword()));
             userRepository.save(user);
             model.addAttribute("users", userRepository.findAll());
+            log.info("success for  create user");
             return "redirect:/user/list";
         } else {
+        	log.warn("error for  create user");
         	ResponseEntity.status(500).body("Error with create user");
         }
         return "user/add";
@@ -89,6 +97,7 @@ public class UserController {
         User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         user.setPassword("");
         model.addAttribute("user", user);
+        log.info("success for  update user");
         return "user/update";
     }
 
@@ -96,6 +105,7 @@ public class UserController {
     public String updateUser(@PathVariable("id") Integer id, @Valid User user,
                              BindingResult result, Model model) {
         if (result.hasErrors()) {
+        	log.error("error for  update user");
             return "user/update";
         }
 
@@ -104,6 +114,7 @@ public class UserController {
         user.setId(id);
         userRepository.save(user);
         model.addAttribute("users", userRepository.findAll());
+        log.info("success for  update user");
         return "redirect:/user/list";
     }
 
@@ -112,6 +123,7 @@ public class UserController {
         User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         userRepository.delete(user);
         model.addAttribute("users", userRepository.findAll());
+        log.info("success for  delete user");
         return "redirect:/user/list";
     }
 }

@@ -1,5 +1,6 @@
 package com.nnk.springboot.services;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class BidListService {
 		if (bidlist == null) {
 			ResponseEntity.status(400).body("rating is null");
 		}
+		LocalDateTime now = LocalDateTime.now();
+		bidlist.setCreationDate(now);
 		Optional<BidList> b = bidListRepository.findById(bidlist.getId());
 		if (b.isPresent()) {
 			ResponseEntity.status(400).body("BidList exist in database");
@@ -34,6 +37,8 @@ public class BidListService {
 	 * @Description method for update BidList
 	 */
 	public BidList updateBidList(int id, BidList bidList) {
+		LocalDateTime now = LocalDateTime.now();
+		bidList.setRevisionDate(now);
 		Optional<BidList> b = bidListRepository.findById( id);
 		if (b.isEmpty()) {
 			ResponseEntity.status(400).body("BidList not exist in database");

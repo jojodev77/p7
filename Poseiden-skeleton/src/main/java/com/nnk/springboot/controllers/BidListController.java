@@ -2,6 +2,9 @@ package com.nnk.springboot.controllers;
 
 import javax.validation.Valid;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +27,8 @@ public class BidListController {
 	
 	@Autowired
 	BidListService bidListService;
+	
+	private static final Logger log = LogManager.getLogger(BidListController.class);
 
     @RequestMapping("/bidList/list")
     public String home(Model model)
@@ -42,8 +47,10 @@ public class BidListController {
     	if (!result.hasErrors()) {
 			model.addAttribute("bidList", bidListService.addBidList(bid));
 			model.addAttribute("bidList", bidListRepository.findAll());
+			log.info("success for  create bidList");
 			return "bidList/list";
     	} else {
+    		log.warn("Error for  create bidList");
     		 return "bidList/add";
     	}
        
@@ -60,13 +67,18 @@ public class BidListController {
         if (!result.hasErrors()) {
 			model.addAttribute("bidList", bidList );
 			bidListService.updateBidList(id, bidList);
+			log.info("success for  update bidList");
 			return "redirect:/rating/list";
 		}
+        log.warn("Error for  update bidList");
         return "bidList/update";
     }
 
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
+    	if (id == null) {
+    		log.warn("Error for  delete bidList");
+		}
     	bidListService.deleteBidList(id);
 		model.addAttribute("bidList", bidListRepository.findAll());
         return "redirect:/bidList/list";

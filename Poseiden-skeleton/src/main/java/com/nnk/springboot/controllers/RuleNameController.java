@@ -4,6 +4,8 @@ import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.RuleNameRepository;
 import com.nnk.springboot.services.RuleNameService;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +25,8 @@ public class RuleNameController {
 	
 	@Autowired
 	RuleNameService ruleNameService;
+	
+	private static final Logger log = LogManager.getLogger(RuleNameController.class);
 
     @RequestMapping("/ruleName/list")
     public String home(Model model)
@@ -41,8 +45,10 @@ public class RuleNameController {
     	if (!result.hasErrors()) {
 			model.addAttribute("ruleName", ruleNameService.addBidList(ruleName));
 			model.addAttribute("ruleName", ruleNameRepository.findAll());
+			log.info("success for  create ruleName");
 			return "ruleName/list";
     	} else {
+    	log.warn("error for  create ruleName");
         return "ruleName/add";
     	}
     }
@@ -58,8 +64,10 @@ public class RuleNameController {
     	if (!result.hasErrors()) {
 			model.addAttribute("ruleName", ruleName);
 			ruleNameService.updateBidList(id, ruleName);
+			log.info("success for  update ruleName");
 			return "redirect:/rating/list";
 		}
+    	 log.warn("error for  update ruleName");
     	 return "ruleName/update";
     }
 
@@ -67,6 +75,7 @@ public class RuleNameController {
     public String deleteRuleName(@PathVariable("id") Integer id, Model model) {
     	ruleNameService.deleteBidList(id);
 		model.addAttribute("ruleName", ruleNameRepository.findAll());
+		log.info("success for  delete ruleName");
         return "redirect:/ruleName/list";
     }
 }
