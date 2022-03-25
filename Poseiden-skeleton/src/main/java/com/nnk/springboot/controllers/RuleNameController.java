@@ -48,8 +48,7 @@ public class RuleNameController {
     }
 
     @GetMapping("/ruleName/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-    	model.addAttribute("ruleName", ruleNameService.updateBidList(id));
+    public String showUpdateForm(@PathVariable("id") Integer id, Model model, RuleName rulName) {
         return "ruleName/update";
     }
 
@@ -57,7 +56,8 @@ public class RuleNameController {
     public String updateRuleName(@PathVariable("id") Integer id, @Valid RuleName ruleName,
                              BindingResult result, Model model) {
     	if (!result.hasErrors()) {
-			model.addAttribute("ruleName", ruleNameService.updateBidList(id));
+			model.addAttribute("ruleName", ruleName);
+			ruleNameService.updateBidList(id, ruleName);
 			return "redirect:/rating/list";
 		}
     	 return "ruleName/update";

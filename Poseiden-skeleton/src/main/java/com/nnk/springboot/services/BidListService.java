@@ -33,12 +33,13 @@ public class BidListService {
 	/**
 	 * @Description method for update BidList
 	 */
-	public BidList updateBidList(int id) {
+	public BidList updateBidList(int id, BidList bidList) {
 		Optional<BidList> b = bidListRepository.findById( id);
 		if (b.isEmpty()) {
 			ResponseEntity.status(400).body("BidList not exist in database");
 		}
-		bidListRepository.save(b.get());
+		
+		bidListRepository.save(bidList);
 		return b.get();
 	}
 	

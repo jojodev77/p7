@@ -34,12 +34,12 @@ public class RatingService {
 	/**
 	 * @Description method for update rating
 	 */
-	public Rating updateRating(int id) {
+	public Rating updateRating(int id, Rating rating) {
 		Optional<Rating> r = Optional.ofNullable(ratingRepository.findById( id));
 		if (r.isEmpty()) {
 			ResponseEntity.status(400).body("rating not exist in database");
 		}
-		ratingRepository.save(r.get());
+		ratingRepository.save(rating);
 		return r.get();
 	}
 	

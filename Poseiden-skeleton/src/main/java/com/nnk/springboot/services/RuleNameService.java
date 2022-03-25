@@ -35,12 +35,12 @@ public String addBidList(RuleName ruleName) {
 /**
  * @Description method for update BidList
  */
-public RuleName updateBidList(int id) {
+public RuleName updateBidList(int id, RuleName ruleName) {
 	Optional<RuleName> r = ruleNameRepository.findById( id);
 	if (r.isEmpty()) {
 		ResponseEntity.status(400).body("ruleName not exist in database");
 	}
-	ruleNameRepository.save(r.get());
+	ruleNameRepository.save(ruleName);
 	return r.get();
 }
 

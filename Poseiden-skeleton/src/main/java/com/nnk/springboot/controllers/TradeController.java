@@ -49,8 +49,7 @@ public class TradeController {
     }
 
     @GetMapping("/trade/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-    	model.addAttribute("trade", tradeService.updateTrade(id));
+    public String showUpdateForm(@PathVariable("id") Integer id, Model model, Trade trade) {
         return "trade/update";
     }
 
@@ -58,7 +57,8 @@ public class TradeController {
     public String updateTrade(@PathVariable("id") Integer id, @Valid Trade trade,
                              BindingResult result, Model model) {
     	if (!result.hasErrors()) {
-			model.addAttribute("trade", tradeService.updateTrade(id));
+			model.addAttribute("trade", trade);
+			tradeService.updateTrade(id, trade);
 			return "redirect:/trade/list";
 		}
     	 return "trade/update";

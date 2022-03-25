@@ -51,8 +51,7 @@ public class RatingController {
 	}
 
 	@GetMapping("/rating/update/{id}")
-	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-		model.addAttribute("rating", ratingService.updateRating(id));
+	public String showUpdateForm(@PathVariable("id") Integer id, Model model, Rating rating) {
 		return "rating/update";
 	}
 
@@ -60,7 +59,8 @@ public class RatingController {
 	public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating, BindingResult result,
 			Model model) {
 		if (!result.hasErrors()) {
-			model.addAttribute("rating", ratingService.updateRating(id));
+			model.addAttribute("rating", rating);
+			ratingService.updateRating(id, rating);
 			return "redirect:/rating/list";
 		}
 		return "rating/update";

@@ -33,12 +33,12 @@ public class CurvePointService {
 	/**
 	 * @Description method for update curvePoint
 	 */
-	public CurvePoint updateCurvePoint(int id) {
+	public CurvePoint updateCurvePoint(int id, CurvePoint curvePoint) {
 		Optional<CurvePoint> c = curvePointRepository.findById( id);
 		if (c.isEmpty()) {
 			ResponseEntity.status(400).body("curvePoint not exist in database");
 		}
-		curvePointRepository.save(c.get());
+		curvePointRepository.save(curvePoint);
 		return c.get();
 	}
 	

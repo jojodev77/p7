@@ -48,8 +48,7 @@ public class CurveController {
     }
 
     @GetMapping("/curvePoint/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-    	model.addAttribute("curvePoint", curvePointService.updateCurvePoint(id));
+    public String showUpdateForm(@PathVariable("id") Integer id, Model model, CurvePoint curve) {
         return "curvePoint/update";
     }
 
@@ -57,7 +56,8 @@ public class CurveController {
     public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
                              BindingResult result, Model model) {
     	if (!result.hasErrors()) {
-			model.addAttribute("rating", curvePointService.updateCurvePoint(id));
+			model.addAttribute("curvePoint", curvePoint);
+			curvePointService.updateCurvePoint(id, curvePoint);
 			return "redirect:/curvePoint/list";
 		}
         return "curvePoint/update";

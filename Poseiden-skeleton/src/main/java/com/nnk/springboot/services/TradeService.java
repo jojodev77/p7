@@ -36,12 +36,12 @@ public class TradeService {
 	/**
 	 * @Description method for update trade
 	 */
-	public Trade updateTrade(int id) {
+	public Trade updateTrade(int id, Trade trade) {
 		Optional<Trade> t = tradeRepository.findById( id);
 		if (t.isEmpty()) {
 			ResponseEntity.status(400).body("trade not exist in database");
 		}
-		tradeRepository.save(t.get());
+		tradeRepository.save(trade);
 		return t.get();
 	}
 	
