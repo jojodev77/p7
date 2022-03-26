@@ -1,6 +1,7 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.RuleName;
+import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.RuleNameRepository;
 import com.nnk.springboot.services.RuleNameService;
 
@@ -54,8 +55,10 @@ public class RuleNameController {
     }
 
     @GetMapping("/ruleName/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model, RuleName rulName) {
-        return "ruleName/update";
+    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
+    	RuleName ruleName = ruleNameRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid ruleName Id:" + id));
+    	model.addAttribute("ruleName", ruleName);
+    	return "ruleName/update";
     }
 
     @PostMapping("/ruleName/update/{id}")

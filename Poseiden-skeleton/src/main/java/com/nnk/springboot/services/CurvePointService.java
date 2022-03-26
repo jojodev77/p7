@@ -1,5 +1,6 @@
 package com.nnk.springboot.services;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class CurvePointService {
 		if (c.isPresent()) {
 			ResponseEntity.status(400).body("curvePoint exist in database");
 		}
+		LocalDateTime now = LocalDateTime.now();
+		curvePoint.setCreationDate(now);
+		
 		curvePointRepository.save(curvePoint);
 		return "trade add with success";
 	}
@@ -38,6 +42,8 @@ public class CurvePointService {
 		if (c.isEmpty()) {
 			ResponseEntity.status(400).body("curvePoint not exist in database");
 		}
+		LocalDateTime now = LocalDateTime.now();
+		curvePoint.setAsOfDate(now);
 		curvePointRepository.save(curvePoint);
 		return c.get();
 	}

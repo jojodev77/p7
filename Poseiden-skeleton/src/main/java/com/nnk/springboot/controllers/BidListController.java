@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.services.BidListService;
 
@@ -57,7 +58,9 @@ public class BidListController {
     }
 
     @GetMapping("/bidList/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model,BidList bidList ) {
+    public String showUpdateForm(@PathVariable("id") Integer id, Model model ) {
+    	BidList bidList = bidListRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid bidList Id:" + id));
+    	model.addAttribute("bidList", bidList );
         return "bidList/update";
     }
 

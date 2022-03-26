@@ -1,5 +1,6 @@
 package com.nnk.springboot.services;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class TradeService {
 		if (t.isPresent()) {
 			ResponseEntity.status(400).body("trade exist in database");
 		}
+		LocalDateTime now = LocalDateTime.now();
+		trade.setCreationDate(now);
 		tradeRepository.save(trade);
 		return "trade add with success";
 	}
@@ -41,6 +44,8 @@ public class TradeService {
 		if (t.isEmpty()) {
 			ResponseEntity.status(400).body("trade not exist in database");
 		}
+		LocalDateTime now = LocalDateTime.now();
+		trade.setRevisionDate(now);
 		tradeRepository.save(trade);
 		return t.get();
 	}

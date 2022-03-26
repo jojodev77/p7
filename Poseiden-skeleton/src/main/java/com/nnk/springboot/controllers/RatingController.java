@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.repositories.RatingRepository;
 import com.nnk.springboot.services.RatingService;
@@ -55,7 +56,9 @@ public class RatingController {
 	}
 
 	@GetMapping("/rating/update/{id}")
-	public String showUpdateForm(@PathVariable("id") Integer id, Model model, Rating rating) {
+	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
+		Rating rating = ratingRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid rating Id:" + id));
+		model.addAttribute("rating", rating);
 		return "rating/update";
 	}
 

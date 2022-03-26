@@ -35,7 +35,7 @@ public class RatingService {
 	 * @Description method for update rating
 	 */
 	public Rating updateRating(int id, Rating rating) {
-		Optional<Rating> r = Optional.ofNullable(ratingRepository.findById( id));
+		Optional<Rating> r = ratingRepository.findById( id);
 		if (r.isEmpty()) {
 			ResponseEntity.status(400).body("rating not exist in database");
 		}
@@ -47,8 +47,8 @@ public class RatingService {
 	 * @Description method for update rating
 	 */
 	public String deleteRating(long id) {
-		Rating r = ratingRepository.findById(id);
-		ratingRepository.delete(r);
+		Optional<Rating> r = ratingRepository.findById(id);
+		ratingRepository.delete(r.get());
 		return "rating delete with success";
 	}
 }

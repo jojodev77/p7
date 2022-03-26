@@ -1,5 +1,6 @@
 package com.nnk.springboot.controllers;
 
+import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
 import com.nnk.springboot.services.CurvePointService;
@@ -53,7 +54,9 @@ public class CurveController {
 	}
 
 	@GetMapping("/curvePoint/update/{id}")
-	public String showUpdateForm(@PathVariable("id") Integer id, Model model, CurvePoint curve) {
+	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
+		CurvePoint curvePoint = curvePointRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid bidList Id:" + id));
+		model.addAttribute("curvePoint", curvePoint);
 		return "curvePoint/update";
 	}
 

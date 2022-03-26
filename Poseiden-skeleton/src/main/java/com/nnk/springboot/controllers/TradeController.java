@@ -1,5 +1,6 @@
 package com.nnk.springboot.controllers;
 
+import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.services.TradeService;
@@ -55,7 +56,9 @@ public class TradeController {
     }
 
     @GetMapping("/trade/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model, Trade trade) {
+    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
+    	Trade trade = tradeRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid trade Id:" + id));
+    	model.addAttribute("trade", trade);
         return "trade/update";
     }
 
