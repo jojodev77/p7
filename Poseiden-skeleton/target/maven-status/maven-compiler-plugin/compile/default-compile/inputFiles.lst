@@ -8,6 +8,7 @@ C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\
 C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\config\JWTUtil.java
 C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\Dto\TradeDto.java
 C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\BidList.java
+C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\config\ExcludeFromJacocoGeneratedReport.java
 C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\UserController.java
 C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\User.java
 C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\HomeController.java

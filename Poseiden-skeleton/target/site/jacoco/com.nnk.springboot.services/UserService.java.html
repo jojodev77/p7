@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.services</a> &gt; <span class="el_source">UserService.java</span></div><h1>UserService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.services;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+
+import com.nnk.springboot.Dto.SigninDto;
+import com.nnk.springboot.config.MyUserDetailsService;
+import com.nnk.springboot.domain.User;
+import com.nnk.springboot.repositories.UserRepository;
+
+
+@Service
+<span class="nc" id="L25">public class UserService {</span>
+
+	@Autowired
+	UserRepository userRepository;
+	
+	@Autowired
+	MyUserDetailsService myUserDetailService;
+	
+	 @Autowired
+	    private AuthenticationManager authenticationManager;
+	
+	/**
+	 * @description method for create User
+	 */
+	public User createUser() {
+<span class="nc" id="L40">		User user = new User();</span>
+<span class="nc" id="L41">		return user;</span>
+	}
+	
+	/**
+	 * @description method for create User
+	 */
+	public UserDetails signin(SigninDto signin) {
+<span class="nc bnc" id="L48" title="All 2 branches missed.">		if (signin == null) {</span>
+<span class="nc" id="L49">			ResponseEntity.status(400).body(&quot;Informations for signin not found&quot;);</span>
+		}
+<span class="nc" id="L51">		return myUserDetailService.loadUserByUsername(signin.getUsername());</span>
+		
+	}
+	
+<span class="fc" id="L55">	private static final Logger logger = LoggerFactory.getLogger(UserService.class);</span>
+
+    public boolean isAuthenticated() {
+<span class="nc" id="L58">        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (authentication == null || AnonymousAuthenticationToken.class.</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            isAssignableFrom(authentication.getClass())) {</span>
+<span class="nc" id="L61">            return false;</span>
+        }
+<span class="nc" id="L63">        return authentication.isAuthenticated();</span>
+    }
+
+    public UserDetails autoLogin(SigninDto signin) {
+<span class="nc" id="L67">        UserDetails userDetails = myUserDetailService.loadUserByUsername(signin.getUsername());</span>
+<span class="nc" id="L68">        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, signin.getPassword(), userDetails.getAuthorities());</span>
+
+<span class="nc" id="L70">        authenticationManager.authenticate(usernamePasswordAuthenticationToken);</span>
+
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (usernamePasswordAuthenticationToken.isAuthenticated()) {</span>
+<span class="nc" id="L73">            SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);</span>
+<span class="nc" id="L74">            logger.debug(String.format(&quot;Auto login %s successfully!&quot;, signin.getUsername()));</span>
+        }
+<span class="nc" id="L76">        return userDetails;</span>
+    }
+    
+    private static final String PASSWORD_PATTERN =
+            &quot;^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&amp;()–[{}]:;',?/*~$^+=&lt;&gt;]).{8,20}$&quot;;
+
+<span class="fc" id="L82">    private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);</span>
+
+    public static boolean isValid(final String password) {
+<span class="nc" id="L85">        Matcher matcher = pattern.matcher(password);</span>
+<span class="nc" id="L86">        return matcher.matches();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

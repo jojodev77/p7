@@ -68,7 +68,7 @@ public class RuleNameController {
 			model.addAttribute("ruleName", ruleName);
 			ruleNameService.updateBidList(id, ruleName);
 			log.info("success for  update ruleName");
-			return "redirect:/rating/list";
+			return "redirect:/ruleName/list";
 		}
     	 log.warn("error for  update ruleName");
     	 return "ruleName/update";

@@ -1,5 +1,8 @@
 package com.nnk.springboot.services;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,5 +74,15 @@ public class UserService {
             logger.debug(String.format("Auto login %s successfully!", signin.getUsername()));
         }
         return userDetails;
+    }
+    
+    private static final String PASSWORD_PATTERN =
+            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$";
+
+    private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+
+    public static boolean isValid(final String password) {
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
     }
 }

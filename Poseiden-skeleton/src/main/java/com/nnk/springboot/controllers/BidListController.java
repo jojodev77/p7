@@ -79,11 +79,9 @@ public class BidListController {
 
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
-    	if (id == null) {
-    		log.warn("Error for  delete bidList");
-		}
     	bidListService.deleteBidList(id);
 		model.addAttribute("bidList", bidListRepository.findAll());
+		log.info("success for  delete bidList");
         return "redirect:/bidList/list";
     }
 }

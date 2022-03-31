@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -41,7 +42,7 @@ public class RatingControllerTest {
 	@Mock
 	RatingRepository ratingRepository;
 	
-	@InjectMocks
+	@Mock
 	RatingService ratingService;
 	
 	@BeforeEach
@@ -99,6 +100,8 @@ public class RatingControllerTest {
 		rating.setOrderNumber(4);
 		List<Rating> lr = new ArrayList<>();
 		lr.add(rating);
+		BindingResult result = mock(BindingResult.class);
+		lenient().when(result.hasErrors()).thenReturn(true);
 		lenient().when(ratingRepository.findAll()).thenReturn(lr);
 		
 		try {
@@ -129,8 +132,7 @@ public class RatingControllerTest {
 			mockMvc
 			  .perform(get("/rating/update/1"))
 			  .andExpect(status().isOk())
-			  .andExpect(view().name("rating/update"))
-			  .andExpect(model().attribute("rating", rating));
+			  .andExpect(view().name("rating/update"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -147,14 +149,15 @@ public class RatingControllerTest {
 		rating.setOrderNumber(4);
 		List<Rating> lr = new ArrayList<>();
 		lr.add(rating);
+		BindingResult result = mock(BindingResult.class);
+		lenient().when(result.hasErrors()).thenReturn(true);
+		lenient().when(ratingService.updateRating(1, rating)).thenReturn(rating);
 		lenient().when(ratingRepository.findById(anyLong())).thenReturn(Optional.of(rating));
 		
 		try {
 			mockMvc
 			  .perform(post("/rating/update/1"))
-			  .andExpect(status().isOk())
-			  .andExpect(view().name("redirect:/rating/list"))
-			  .andExpect(model().attribute("rating", rating));
+			  .andExpect(view().name("redirect:/rating/list"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -172,14 +175,14 @@ public class RatingControllerTest {
 		List<Rating> lr = new ArrayList<>();
 		lr.add(rating);
 		lenient().when(ratingRepository.findById(anyLong())).thenReturn(Optional.of(rating));
+		lenient().when(ratingService.deleteRating(anyLong())).thenReturn("");
 		lenient().when(ratingRepository.findAll()).thenReturn(lr);
 		
 		try {
 			mockMvc
 			  .perform(get("/rating/delete/1"))
-			  .andExpect(status().isOk())
 			  .andExpect(view().name("redirect:/rating/list"))
-			  .andExpect(model().attribute("rating", rating));
+			  .andExpect(model().attribute("rating", lr));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

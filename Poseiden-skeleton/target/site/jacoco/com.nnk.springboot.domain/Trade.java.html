@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Trade.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.domain</a> &gt; <span class="el_source">Trade.java</span></div><h1>Trade.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.domain;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
+import lombok.Data;
+
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
+
+@Entity
+<span class="pc bnc" id="L13" title="All 138 branches missed.">@Data</span>
+@Table(name = &quot;trade&quot;)
+public class Trade {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+<span class="fc" id="L18">	long id;</span>
+<span class="fc" id="L19">	long TradeId;</span>
+	@NotBlank(message = &quot;account is not blank&quot;)
+<span class="fc" id="L21">	String account;</span>
+	@NotBlank(message = &quot;type is not blank&quot;)
+<span class="fc" id="L23">	String type;</span>
+<span class="fc" id="L24">	double buyQuantity;</span>
+<span class="fc" id="L25">	double sellQuantity;</span>
+<span class="fc" id="L26">	double buyPrice;</span>
+<span class="fc" id="L27">	double sellPrice;</span>
+<span class="fc" id="L28">	LocalDateTime tradeDate;</span>
+<span class="fc" id="L29">	String security;</span>
+<span class="fc" id="L30">	String status;</span>
+<span class="fc" id="L31">	String trader;</span>
+<span class="fc" id="L32">	String benchmark;</span>
+<span class="fc" id="L33">	String book;</span>
+<span class="fc" id="L34">	String creationName;</span>
+<span class="fc" id="L35">	LocalDateTime creationDate;</span>
+<span class="fc" id="L36">	String revisionName;</span>
+<span class="fc" id="L37">	LocalDateTime revisionDate;</span>
+<span class="fc" id="L38">	String dealName;</span>
+<span class="fc" id="L39">	String sourceListId; </span>
+<span class="fc" id="L40">	String side;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

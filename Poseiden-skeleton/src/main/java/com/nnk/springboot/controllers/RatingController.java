@@ -71,7 +71,7 @@ public class RatingController {
 			log.info("success for  update rating");
 			return "redirect:/rating/list";
 		}
-		log.warn("error for  create bidList");
+		log.warn("error for  create rating");
 		return "rating/update";
 	}
 
@@ -79,7 +79,7 @@ public class RatingController {
 	public String deleteRating(@PathVariable("id") long id, Model model) {
 		ratingService.deleteRating(id);
 		model.addAttribute("rating", ratingRepository.findAll());
-		log.info("success for  delete bidList");
+		log.info("success for  delete rating");
 		return "redirect:/rating/list";
 	}
 }

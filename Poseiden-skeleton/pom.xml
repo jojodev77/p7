@@ -280,20 +280,15 @@
 				<configuration>
 					<excludes>
 						<exclude>META-INF/**</exclude>
-						<exclude>**/*dto*/**</exclude>
-						<exclude>**/*model*/**</exclude>
-						<exclude>**/*util*/**</exclude>
-						<exclude>**/*handler*/**</exclude>
-						<exclude>**/*validator*/**</exclude>
-						<exclude>**/*exception*/**</exclude>
-						<exclude>**/*exception/handler*/**</exclude>
+						<exclude>**/*Dto*/**</exclude>
+						<exclude>**/*domain*/**</exclude>
 						<exclude>**/*config*/**</exclude>
-						<exclude>**/*security/jwt*/**</exclude>
-						<exclude>**/*security/oauth2*/**</exclude>
-						<exclude>**/*security/oauth2/user*/**</exclude>
 						<exclude>**/Lambda**</exclude>
+						<exclude>**/Lambda$0**</exclude>
 						<exclude>Lambda/**</exclude>
-						<exclude>**/*PmbApplication.class*/**</exclude>
+						<exclude>Lambda$/**</exclude>
+						<exclude>Lambda$0/**</exclude>
+						<exclude>**/*Application.class*/**</exclude>
 					</excludes>
 				</configuration>
 				<reportSets>

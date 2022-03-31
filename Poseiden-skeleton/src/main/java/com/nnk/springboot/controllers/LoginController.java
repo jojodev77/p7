@@ -1,12 +1,16 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.repositories.UserRepository;
+import com.nnk.springboot.config.ExcludeFromJacocoGeneratedReport;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 @RequestMapping("app")
@@ -15,6 +19,7 @@ public class LoginController {
 	@Autowired
 	UserRepository userRepository;
 
+	@ExcludeFromJacocoGeneratedReport
     @GetMapping("login")
     public ModelAndView login() {
         ModelAndView mav = new ModelAndView();
@@ -22,6 +27,7 @@ public class LoginController {
         return mav;
     }
 
+	@ExcludeFromJacocoGeneratedReport
     @GetMapping("secure/article-details")
     public ModelAndView getAllUserArticles() {
         ModelAndView mav = new ModelAndView();
@@ -30,6 +36,7 @@ public class LoginController {
         return mav;
     }
 
+	@ExcludeFromJacocoGeneratedReport
     @GetMapping("error")
     public ModelAndView error() {
         ModelAndView mav = new ModelAndView();
