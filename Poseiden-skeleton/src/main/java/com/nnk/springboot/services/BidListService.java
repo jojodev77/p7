@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class BidListService {
 		bidlist.setCreationDate(now);
 		Optional<BidList> b = bidListRepository.findById(bidlist.getId());
 		if (b.isPresent()) {
-			ResponseEntity.status(400).body("BidList exist in database");
+			new ResponseEntity<>("BidList exist in database", HttpStatus.NOT_ACCEPTABLE);
 		}
 		bidListRepository.save(bidlist);
 		return "BidList add with success";
@@ -41,7 +42,7 @@ public class BidListService {
 		bidList.setRevisionDate(now);
 		Optional<BidList> b = bidListRepository.findById( id);
 		if (b.isEmpty()) {
-			ResponseEntity.status(400).body("BidList not exist in database");
+			new ResponseEntity<>("BidList not exist in database", HttpStatus.NOT_ACCEPTABLE);
 		}
 		
 		bidListRepository.save(bidList);

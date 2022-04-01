@@ -8,6 +8,7 @@ import com.nnk.springboot.services.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -35,7 +36,7 @@ public class UserController {
     @GetMapping("/user/login")
     public String login( @ModelAttribute SigninDto signin, BindingResult binding, Model model) {
     	if (binding.hasErrors()) {
-    		ResponseEntity.status(400).body("");
+    		new ResponseEntity<>("login is incorrect", HttpStatus.NOT_ACCEPTABLE);
 		}
     	model.addAttribute("signin", signin);
     	return "user/login";
@@ -77,17 +78,20 @@ public class UserController {
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
         if (!result.hasErrors()) {
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            user.setPassword(encoder.encode(user.getPassword()));
-            userRepository.save(user);
+        	if (userService.isValid(user.getPassword()) == false) {
+        		  model.addAttribute("error", "Your password is not reglementary");
+        		return "user/add";
+			}
+          userService.createUser(user);
             model.addAttribute("users", userRepository.findAll());
             log.info("success for  create user");
             return "redirect:/user/list";
         } else {
         	log.warn("error for  create user");
-        	ResponseEntity.status(500).body("Error with create user");
+        	  model.addAttribute("error", new ResponseEntity<>("user is not create", HttpStatus.NOT_ACCEPTABLE));
+        	 return "user/add";
         }
-        return "user/add";
+       
     }
 
     @GetMapping("/user/update/{id}")
