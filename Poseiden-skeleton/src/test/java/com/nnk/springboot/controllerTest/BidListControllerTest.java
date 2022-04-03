@@ -19,6 +19,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.BindingResult;
@@ -112,7 +114,8 @@ private MockMvc mockMvc;
 		bidList.setBenchmark("srdtfyuijk");
 		List<BidList> bd = new ArrayList<>();
 		bd.add(bidList);
-		lenient().when(bidListService.addBidList(any())).thenReturn("fghj");
+		ResponseEntity resp = new ResponseEntity<>("bidList add with success", HttpStatus.OK);
+		lenient().when(bidListService.addBidList(any())).thenReturn(resp);
 		lenient().when(bidListRepository.findAll()).thenReturn(bd);
 		
 		try {
@@ -165,7 +168,8 @@ private MockMvc mockMvc;
 		bidList.setCommentary("fvvg");
 		List<BidList> bd = new ArrayList<>();
 		bd.add(bidList);
-		lenient().when(bidListService.updateBidList(1, bidList)).thenReturn(bidList);
+		ResponseEntity resp = new ResponseEntity<>("bidList update with success", HttpStatus.OK);
+		lenient().when(bidListService.updateBidList(1, bidList)).thenReturn(resp);
 		lenient().when(bidListRepository.findById(anyLong())).thenReturn(Optional.of(bidList));
 		
 		try {
@@ -192,7 +196,8 @@ private MockMvc mockMvc;
 		bidList.setCommentary("fvvg");
 		List<BidList> bd = new ArrayList<>();
 		bd.add(bidList);
-		lenient().when(bidListService.deleteBidList(anyLong())).thenReturn("");
+		ResponseEntity resp = new ResponseEntity<>("bidList delete with success", HttpStatus.OK);
+		lenient().when(bidListService.deleteBidList(anyLong())).thenReturn(resp);
 		lenient().when(bidListRepository.findById(anyLong())).thenReturn(Optional.of(bidList));
 		lenient().when(bidListRepository.findAll()).thenReturn(bd);
 		

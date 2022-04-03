@@ -15,6 +15,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.domain.Rating;
@@ -62,12 +64,13 @@ public class RatingServiceTest {
 		rating.setOrderNumber(4);
 		List<Rating> lr = new ArrayList<>();
 		lr.add(rating);
+		ResponseEntity resp = new ResponseEntity<>("rating add with success", HttpStatus.OK);
 		// WHEN
 		lenient().when(ratingRepository.findById(anyLong())).thenReturn(Optional.of(rating));
 		// THEN
 		// THEN
 		// THEN
-		assertEquals(ratingService.addRating(rating), "rating add with success");
+		assertEquals(ratingService.addRating(rating), resp);
 
 	}
 	

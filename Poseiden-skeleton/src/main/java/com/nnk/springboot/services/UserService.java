@@ -65,7 +65,7 @@ public class UserService {
 	 */
 	public UserDetails signin(SigninDto signin) {
 		if (signin.getUsername() == null) {
-			ResponseEntity.status(400).body("Informations for signin not found");
+			new ResponseEntity<>("Informations for signin not found", HttpStatus.NOT_ACCEPTABLE);
 			new RuntimeException();
 		}
 		return myUserDetailService.loadUserByUsername(signin.getUsername());

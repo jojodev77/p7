@@ -3,6 +3,7 @@ package com.nnk.springboot.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -19,36 +20,38 @@ public class RatingService {
 	/**
 	 * @Description method for add rating
 	 */
-	public String addRating(Rating rating) {
+	public ResponseEntity<?> addRating(Rating rating) {
 		if (rating == null) {
-			ResponseEntity.status(400).body("rating is null");
+			new ResponseEntity<>("rating is null", HttpStatus.NOT_ACCEPTABLE);
+			new RuntimeException();
 		}
 		Optional<Rating> r = ratingRepository.findBySandPRating(rating.getFitchRating());
 		if (r.isPresent()) {
-			ResponseEntity.status(400).body("rating exist in database");
+			new ResponseEntity<>("rating exist in database", HttpStatus.NOT_ACCEPTABLE);
 		}
 		ratingRepository.save(rating);
-		return "rating add with success";
+		return new ResponseEntity<>("rating add with success", HttpStatus.OK);
 	}
 	
 	/**
 	 * @Description method for update rating
 	 */
-	public Rating updateRating(int id, Rating rating) {
+	public ResponseEntity<?> updateRating(int id, Rating rating) {
 		Optional<Rating> r = ratingRepository.findById( id);
 		if (r.isEmpty()) {
-			ResponseEntity.status(400).body("rating not exist in database");
+			new ResponseEntity<>("rating not exist in database", HttpStatus.NOT_ACCEPTABLE);
+			new RuntimeException();
 		}
 		ratingRepository.save(rating);
-		return r.get();
+		return new ResponseEntity<>("rating update with success", HttpStatus.OK);
 	}
 	
 	/**
 	 * @Description method for update rating
 	 */
-	public String deleteRating(long id) {
+	public ResponseEntity<?> deleteRating(long id) {
 		Optional<Rating> r = ratingRepository.findById(id);
 		ratingRepository.delete(r.get());
-		return "rating delete with success";
+		return new ResponseEntity<>("rating delete with success", HttpStatus.OK);
 	}
 }

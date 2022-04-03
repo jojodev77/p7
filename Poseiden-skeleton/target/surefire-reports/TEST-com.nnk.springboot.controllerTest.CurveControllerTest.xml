@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.517" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.498" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\java\jdk-11.0.8.10-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\j.de-la-osa\AppData\Local\Temp\surefire11683201322526160212\surefirebooter15365552172288233364.jar C:\Users\j.de-la-osa\AppData\Local\Temp\surefire11683201322526160212 2022-04-03T16-20-20_151-jvmRun1 surefire9169375414506154262tmp surefire_0327298280140594076tmp"/>
+    <property name="sun.java.command" value="C:\Users\j.de-la-osa\AppData\Local\Temp\surefire8944016148040892153\surefirebooter5414189563796340960.jar C:\Users\j.de-la-osa\AppData\Local\Temp\surefire8944016148040892153 2022-04-03T16-57-40_960-jvmRun1 surefire8729923888718778201tmp surefire_013061179817334020944tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\test-classes;C:\Users\j.de-la-osa\formationJAVA\p7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.6.3\spring-boot-starter-data-jpa-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.6.3\spring-boot-starter-aop-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.6.3\spring-boot-starter-jdbc-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-jdbc\5.3.15\spring-jdbc-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;C:\Users\j.de-la-osa\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\hibernate\hibernate-core\5.6.4.Final\hibernate-core-5.6.4.Final.jar;C:\Users\j.de-la-osa\.m2\repository\org\jboss\logging\jboss-logging\3.4.3.Final\jboss-logging-3.4.3.Final.jar;C:\Users\j.de-la-osa\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\j.de-la-osa\.m2\repository\org\jboss\jandex\2.4.2.Final\jandex-2.4.2.Final.jar;C:\Users\j.de-la-osa\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\j.de-la-osa\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.5\jaxb-runtime-2.3.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\glassfish\jaxb\txw2\2.3.5\txw2-2.3.5.jar;C:\Users\j.de-la-osa\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.12\istack-commons-runtime-3.0.12.jar;C:\Users\j.de-la-osa\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\data\spring-data-jpa\2.6.1\spring-data-jpa-2.6.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\data\spring-data-commons\2.6.1\spring-data-commons-2.6.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-orm\5.3.15\spring-orm-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-tx\5.3.15\spring-tx-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-aspects\5.3.15\spring-aspects-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-oauth2-client\2.6.3\spring-boot-starter-oauth2-client-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter\2.6.3\spring-boot-starter-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.6.3\spring-boot-starter-logging-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\ch\qos\logback\logback-classic\1.2.10\logback-classic-1.2.10.jar;C:\Users\j.de-la-osa\.m2\repository\ch\qos\logback\logback-core\1.2.10\logback-core-1.2.10.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.17.1\log4j-to-slf4j-2.17.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.1\log4j-api-2.17.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\slf4j\jul-to-slf4j\1.7.33\jul-to-slf4j-1.7.33.jar;C:\Users\j.de-la-osa\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\yaml\snakeyaml\1.29\snakeyaml-1.29.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\security\spring-security-core\5.6.1\spring-security-core-5.6.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\security\spring-security-crypto\5.6.1\spring-security-crypto-5.6.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\security\spring-security-oauth2-client\5.6.1\spring-security-oauth2-client-5.6.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\security\spring-security-oauth2-core\5.6.1\spring-security-oauth2-core-5.6.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\nimbusds\oauth2-oidc-sdk\9.19\oauth2-oidc-sdk-9.19.jar;C:\Users\j.de-la-osa\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\j.de-la-osa\.m2\repository\com\nimbusds\content-type\2.1\content-type-2.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\nimbusds\lang-tag\1.5\lang-tag-1.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\security\spring-security-oauth2-jose\5.6.1\spring-security-oauth2-jose-5.6.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\nimbusds\nimbus-jose-jwt\9.14\nimbus-jose-jwt-9.14.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.6.3\spring-boot-starter-web-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.6.3\spring-boot-starter-json-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.13.1\jackson-datatype-jdk8-2.13.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.13.1\jackson-datatype-jsr310-2.13.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.13.1\jackson-module-parameter-names-2.13.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.6.3\spring-boot-starter-tomcat-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.56\tomcat-embed-core-9.0.56.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.56\tomcat-embed-websocket-9.0.56.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-web\5.3.15\spring-web-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-webmvc\5.3.15\spring-webmvc-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-validation\2.6.3\spring-boot-starter-validation-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\9.0.56\tomcat-embed-el-9.0.56.jar;C:\Users\j.de-la-osa\.m2\repository\org\hibernate\validator\hibernate-validator\6.2.0.Final\hibernate-validator-6.2.0.Final.jar;C:\Users\j.de-la-osa\.m2\repository\jakarta\validation\jakarta.validation-api\2.0.2\jakarta.validation-api-2.0.2.jar;C:\Users\j.de-la-osa\.m2\repository\io\jsonwebtoken\jjwt\0.9.1\jjwt-0.9.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.1\jackson-databind-2.13.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.1\jackson-annotations-2.13.1.jar;C:\Users\j.de-la-osa\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.1\jackson-core-2.13.1.jar;C:\Users\j.de-la-osa\.m2\repository\mysql\mysql-connector-java\8.0.28\mysql-connector-java-8.0.28.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.6.3\spring-boot-starter-test-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-test\2.6.3\spring-boot-test-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.6.3\spring-boot-test-autoconfigure-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\com\jayway\jsonpath\json-path\2.6.0\json-path-2.6.0.jar;C:\Users\j.de-la-osa\.m2\repository\net\minidev\json-smart\2.4.7\json-smart-2.4.7.jar;C:\Users\j.de-la-osa\.m2\repository\net\minidev\accessors-smart\2.4.7\accessors-smart-2.4.7.jar;C:\Users\j.de-la-osa\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\j.de-la-osa\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\assertj\assertj-core\3.21.0\assertj-core-3.21.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.2\junit-jupiter-5.8.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\mockito\mockito-junit-jupiter\4.0.0\mockito-junit-jupiter-4.0.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\j.de-la-osa\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-core\5.3.15\spring-core-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-jcl\5.3.15\spring-jcl-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-test\5.3.15\spring-test-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\xmlunit\xmlunit-core\2.8.4\xmlunit-core-2.8.4.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-devtools\2.6.3\spring-boot-devtools-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot\2.6.3\spring-boot-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.6.3\spring-boot-autoconfigure-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\projectlombok\lombok\1.18.22\lombok-1.18.22.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-configuration-processor\2.6.3\spring-boot-configuration-processor-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.5\jacoco-maven-plugin-0.8.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-model\3.0\maven-model-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-artifact\3.0\maven-artifact-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\j.de-la-osa\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.14\plexus-interpolation-1.14.jar;C:\Users\j.de-la-osa\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\j.de-la-osa\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.2\maven-artifact-manager-2.0.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\j.de-la-osa\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\j.de-la-osa\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;C:\Users\j.de-la-osa\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\reporting\maven-reporting-impl\2.1\maven-reporting-impl-2.1.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-project\2.0.10\maven-project-2.0.10.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-profile\2.0.10\maven-profile-2.0.10.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\maven-plugin-registry\2.0.10\maven-plugin-registry-2.0.10.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\doxia\doxia-core\1.1.2\doxia-core-1.1.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\doxia\doxia-logging-api\1.1.2\doxia-logging-api-1.1.2.jar;C:\Users\j.de-la-osa\.m2\repository\xerces\xercesImpl\2.8.1\xercesImpl-2.8.1.jar;C:\Users\j.de-la-osa\.m2\repository\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;C:\Users\j.de-la-osa\.m2\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;C:\Users\j.de-la-osa\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\doxia\doxia-site-renderer\1.1.2\doxia-site-renderer-1.1.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\doxia\doxia-decoration-model\1.1.2\doxia-decoration-model-1.1.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\doxia\doxia-module-xhtml\1.1.2\doxia-module-xhtml-1.1.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\maven\doxia\doxia-module-fml\1.1.2\doxia-module-fml-1.1.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\codehaus\plexus\plexus-i18n\1.0-beta-7\plexus-i18n-1.0-beta-7.jar;C:\Users\j.de-la-osa\.m2\repository\org\codehaus\plexus\plexus-velocity\1.1.7\plexus-velocity-1.1.7.jar;C:\Users\j.de-la-osa\.m2\repository\org\apache\velocity\velocity\1.5\velocity-1.5.jar;C:\Users\j.de-la-osa\.m2\repository\commons-collections\commons-collections\3.2\commons-collections-3.2.jar;C:\Users\j.de-la-osa\.m2\repository\commons-validator\commons-validator\1.2.0\commons-validator-1.2.0.jar;C:\Users\j.de-la-osa\.m2\repository\commons-beanutils\commons-beanutils\1.7.0\commons-beanutils-1.7.0.jar;C:\Users\j.de-la-osa\.m2\repository\commons-digester\commons-digester\1.6\commons-digester-1.6.jar;C:\Users\j.de-la-osa\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\j.de-la-osa\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\j.de-la-osa\.m2\repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar;C:\Users\j.de-la-osa\.m2\repository\org\jacoco\org.jacoco.agent\0.8.5\org.jacoco.agent-0.8.5-runtime.jar;C:\Users\j.de-la-osa\.m2\repository\org\jacoco\org.jacoco.core\0.8.5\org.jacoco.core-0.8.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\ow2\asm\asm\7.2\asm-7.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\ow2\asm\asm-commons\7.2\asm-commons-7.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\ow2\asm\asm-analysis\7.2\asm-analysis-7.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\ow2\asm\asm-tree\7.2\asm-tree-7.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\jacoco\org.jacoco.report\0.8.5\org.jacoco.report-0.8.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\mockito\mockito-core\4.2.0\mockito-core-4.2.0.jar;C:\Users\j.de-la-osa\.m2\repository\net\bytebuddy\byte-buddy\1.11.22\byte-buddy-1.11.22.jar;C:\Users\j.de-la-osa\.m2\repository\net\bytebuddy\byte-buddy-agent\1.11.22\byte-buddy-agent-1.11.22.jar;C:\Users\j.de-la-osa\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\modelmapper\modelmapper\2.4.5\modelmapper-2.4.5.jar;C:\Users\j.de-la-osa\.m2\repository\org\mapstruct\mapstruct\1.4.0.Final\mapstruct-1.4.0.Final.jar;C:\Users\j.de-la-osa\.m2\repository\org\mapstruct\mapstruct-processor\1.4.0.Final\mapstruct-processor-1.4.0.Final.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\2.6.3\spring-boot-starter-thymeleaf-2.6.3.jar;C:\Users\j.de-la-osa\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-java8time\3.0.4.RELEASE\thymeleaf-extras-java8time-3.0.4.RELEASE.jar;C:\Users\j.de-la-osa\.m2\repository\org\thymeleaf\thymeleaf\3.0.11.RELEASE\thymeleaf-3.0.11.RELEASE.jar;C:\Users\j.de-la-osa\.m2\repository\ognl\ognl\3.1.12\ognl-3.1.12.jar;C:\Users\j.de-la-osa\.m2\repository\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;C:\Users\j.de-la-osa\.m2\repository\org\attoparser\attoparser\2.0.5.RELEASE\attoparser-2.0.5.RELEASE.jar;C:\Users\j.de-la-osa\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\j.de-la-osa\.m2\repository\org\slf4j\slf4j-api\1.7.33\slf4j-api-1.7.33.jar;C:\Users\j.de-la-osa\.m2\repository\org\thymeleaf\thymeleaf-spring5\3.0.11.RELEASE\thymeleaf-spring5-3.0.11.RELEASE.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\security\spring-security-web\5.6.0\spring-security-web-5.6.0.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-aop\5.3.15\spring-aop-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-beans\5.3.15\spring-beans-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-context\5.3.15\spring-context-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\spring-expression\5.3.15\spring-expression-5.3.15.jar;C:\Users\j.de-la-osa\.m2\repository\org\springframework\security\spring-security-config\5.6.0\spring-security-config-5.6.0.jar;C:\Users\j.de-la-osa\.m2\repository\com\auth0\java-jwt\3.18.2\java-jwt-3.18.2.jar;C:\Users\j.de-la-osa\.m2\repository\org\passay\passay\1.6.1\passay-1.6.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\j.de-la-osa\AppData\Local\Temp\surefire11683201322526160212\surefirebooter15365552172288233364.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\j.de-la-osa\AppData\Local\Temp\surefire8944016148040892153\surefirebooter5414189563796340960.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.8-internal+0-adhoc..jdk11u"/>
@@ -59,261 +59,261 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="postAddCurve" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.253">
-    <system-out><![CDATA[16:20:31.393 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-16:20:31.394 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-16:20:31.394 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-16:20:31.396 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-16:20:31.397 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-16:20:31.397 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-16:20:31.398 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-16:20:31.398 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-16:20:31.398 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-16:20:31.401 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-16:20:31.402 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-16:20:31.402 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
-16:20:31.402 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-16:20:31.402 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-16:20:31.402 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-16:20:31.412 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+  <testcase name="postAddCurve" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.265">
+    <system-out><![CDATA[16:57:52.958 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+16:57:52.958 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+16:57:52.958 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+16:57:52.960 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+16:57:52.960 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+16:57:52.961 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+16:57:52.961 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+16:57:52.961 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+16:57:52.961 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+16:57:52.964 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+16:57:52.965 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+16:57:52.965 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+16:57:52.965 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+16:57:52.965 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+16:57:52.965 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+16:57:52.970 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
 	c.n.s.c.CurveController:
-	{ [/curvePoint/list]}: home(Model)
 	{POST [/curvePoint/validate]}: validate(CurvePoint,BindingResult,Model)
+	{ [/curvePoint/list]}: home(Model)
 	{GET [/curvePoint/add]}: addBidForm(CurvePoint)
 	{GET [/curvePoint/update/{id}]}: showUpdateForm(Integer,Model)
 	{GET [/curvePoint/delete/{id}]}: deleteBid(Integer,Model)
 	{POST [/curvePoint/update/{id}]}: updateBid(Integer,CurvePoint,BindingResult,Model)
-16:20:31.415 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-16:20:31.426 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-16:20:31.433 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-16:20:31.433 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-16:20:31.433 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-16:20:31.433 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-16:20:31.433 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-16:20:31.433 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@261052ac
-16:20:31.434 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4995967f
-16:20:31.434 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-16:20:31.434 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-16:20:31.436 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST "/curvePoint/validate", parameters={}
-16:20:31.436 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#validate(CurvePoint, BindingResult, Model)
-16:20:31.449 [main] INFO com.nnk.springboot.controllers.CurveController - success for  create curvePoint
-16:20:31.450 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=[CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null)]}
-16:20:31.450 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/list]
-16:20:31.450 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/list]
-16:20:31.450 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+16:57:52.972 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+16:57:52.983 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+16:57:52.988 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+16:57:52.989 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+16:57:52.989 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+16:57:52.990 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+16:57:52.990 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+16:57:52.990 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@60f6c836
+16:57:52.991 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7b10e088
+16:57:52.991 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+16:57:52.991 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+16:57:52.994 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST "/curvePoint/validate", parameters={}
+16:57:52.995 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#validate(CurvePoint, BindingResult, Model)
+16:57:53.005 [main] INFO com.nnk.springboot.controllers.CurveController - success for  create curvePoint
+16:57:53.007 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=[CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null)]}
+16:57:53.007 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/list]
+16:57:53.007 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/list]
+16:57:53.007 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
 ]]></system-out>
   </testcase>
-  <testcase name="getUpdateCurve" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.053">
-    <system-out><![CDATA[16:20:31.456 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-16:20:31.457 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-16:20:31.457 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-16:20:31.458 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-16:20:31.460 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-16:20:31.461 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-16:20:31.463 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-16:20:31.463 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-16:20:31.463 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-16:20:31.466 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-16:20:31.467 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-16:20:31.467 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
-16:20:31.468 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-16:20:31.468 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-16:20:31.468 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-16:20:31.476 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+  <testcase name="getUpdateCurve" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.042">
+    <system-out><![CDATA[16:57:53.014 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+16:57:53.014 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+16:57:53.014 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+16:57:53.016 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+16:57:53.016 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+16:57:53.016 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+16:57:53.016 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+16:57:53.016 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+16:57:53.016 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+16:57:53.019 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+16:57:53.019 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+16:57:53.019 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+16:57:53.019 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+16:57:53.019 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+16:57:53.019 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+16:57:53.027 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
 	c.n.s.c.CurveController:
-	{ [/curvePoint/list]}: home(Model)
 	{POST [/curvePoint/validate]}: validate(CurvePoint,BindingResult,Model)
+	{ [/curvePoint/list]}: home(Model)
 	{GET [/curvePoint/add]}: addBidForm(CurvePoint)
 	{GET [/curvePoint/update/{id}]}: showUpdateForm(Integer,Model)
 	{GET [/curvePoint/delete/{id}]}: deleteBid(Integer,Model)
 	{POST [/curvePoint/update/{id}]}: updateBid(Integer,CurvePoint,BindingResult,Model)
-16:20:31.479 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-16:20:31.489 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-16:20:31.496 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-16:20:31.497 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-16:20:31.497 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-16:20:31.497 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-16:20:31.497 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-16:20:31.497 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5699119e
-16:20:31.498 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@79927fc8
-16:20:31.498 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-16:20:31.498 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-16:20:31.500 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/update/1", parameters={}
-16:20:31.502 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#showUpdateForm(Integer, Model)
-16:20:31.505 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null), org.springframework.validation.BindingResult.curvePoint=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-16:20:31.505 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/update]
-16:20:31.505 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/update]
-16:20:31.505 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+16:57:53.028 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+16:57:53.035 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+16:57:53.044 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+16:57:53.045 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+16:57:53.045 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+16:57:53.045 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+16:57:53.045 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+16:57:53.046 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@24090655
+16:57:53.046 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2a59c706
+16:57:53.046 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+16:57:53.046 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+16:57:53.048 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/update/1", parameters={}
+16:57:53.048 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#showUpdateForm(Integer, Model)
+16:57:53.051 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null), org.springframework.validation.BindingResult.curvePoint=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+16:57:53.051 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/update]
+16:57:53.051 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/update]
+16:57:53.051 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
 ]]></system-out>
   </testcase>
-  <testcase name="postUpdateCurveTest" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.066">
-    <system-out><![CDATA[16:20:31.513 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-16:20:31.514 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-16:20:31.514 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-16:20:31.515 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-16:20:31.515 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-16:20:31.517 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-16:20:31.517 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-16:20:31.518 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-16:20:31.518 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-16:20:31.521 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-16:20:31.522 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-16:20:31.522 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
-16:20:31.522 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-16:20:31.522 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-16:20:31.523 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-16:20:31.529 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+  <testcase name="postUpdateCurveTest" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.053">
+    <system-out><![CDATA[16:57:53.060 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+16:57:53.060 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+16:57:53.060 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+16:57:53.061 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+16:57:53.061 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+16:57:53.061 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+16:57:53.062 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+16:57:53.062 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+16:57:53.062 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+16:57:53.064 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+16:57:53.065 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+16:57:53.065 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+16:57:53.065 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+16:57:53.065 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+16:57:53.066 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+16:57:53.069 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
 	c.n.s.c.CurveController:
-	{ [/curvePoint/list]}: home(Model)
 	{POST [/curvePoint/validate]}: validate(CurvePoint,BindingResult,Model)
+	{ [/curvePoint/list]}: home(Model)
 	{GET [/curvePoint/add]}: addBidForm(CurvePoint)
 	{GET [/curvePoint/update/{id}]}: showUpdateForm(Integer,Model)
 	{GET [/curvePoint/delete/{id}]}: deleteBid(Integer,Model)
 	{POST [/curvePoint/update/{id}]}: updateBid(Integer,CurvePoint,BindingResult,Model)
-16:20:31.531 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-16:20:31.540 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-16:20:31.546 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-16:20:31.546 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-16:20:31.547 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-16:20:31.547 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-16:20:31.547 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-16:20:31.547 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@10ba182f
-16:20:31.547 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4bee9f7d
-16:20:31.547 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-16:20:31.547 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
-16:20:31.549 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST "/curvePoint/update/1", parameters={}
-16:20:31.550 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#updateBid(Integer, CurvePoint, BindingResult, Model)
-16:20:31.571 [main] INFO com.nnk.springboot.controllers.CurveController - success for  update curvePoint
-16:20:31.571 [main] DEBUG org.springframework.web.servlet.view.RedirectView - View [RedirectView], model {curvePoint=CurvePoint(id=1, CurveId=0, asOfDate=null, term=0.0, value=0.0, creationDate=null), org.springframework.validation.BindingResult.curvePoint=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-16:20:31.572 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 302 FOUND
+16:57:53.071 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+16:57:53.081 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+16:57:53.084 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+16:57:53.084 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+16:57:53.084 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+16:57:53.084 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+16:57:53.084 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+16:57:53.085 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@55cc19ee
+16:57:53.085 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@5f9b4406
+16:57:53.085 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+16:57:53.085 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+16:57:53.087 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST "/curvePoint/update/1", parameters={}
+16:57:53.087 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#updateBid(Integer, CurvePoint, BindingResult, Model)
+16:57:53.103 [main] INFO com.nnk.springboot.controllers.CurveController - success for  update curvePoint
+16:57:53.104 [main] DEBUG org.springframework.web.servlet.view.RedirectView - View [RedirectView], model {curvePoint=CurvePoint(id=1, CurveId=0, asOfDate=null, term=0.0, value=0.0, creationDate=null), org.springframework.validation.BindingResult.curvePoint=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+16:57:53.104 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 302 FOUND
 ]]></system-out>
   </testcase>
-  <testcase name="home" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.046">
-    <system-out><![CDATA[16:20:31.579 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-16:20:31.579 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-16:20:31.579 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-16:20:31.580 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-16:20:31.581 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-16:20:31.582 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-16:20:31.583 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-16:20:31.584 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-16:20:31.584 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-16:20:31.587 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-16:20:31.588 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-16:20:31.588 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
-16:20:31.588 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-16:20:31.588 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-16:20:31.589 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-16:20:31.594 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+  <testcase name="home" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.041">
+    <system-out><![CDATA[16:57:53.115 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+16:57:53.115 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+16:57:53.115 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+16:57:53.116 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+16:57:53.116 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+16:57:53.116 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+16:57:53.117 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+16:57:53.117 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+16:57:53.117 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+16:57:53.119 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+16:57:53.120 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+16:57:53.120 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+16:57:53.120 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+16:57:53.120 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+16:57:53.121 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+16:57:53.129 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
 	c.n.s.c.CurveController:
-	{ [/curvePoint/list]}: home(Model)
 	{POST [/curvePoint/validate]}: validate(CurvePoint,BindingResult,Model)
+	{ [/curvePoint/list]}: home(Model)
 	{GET [/curvePoint/add]}: addBidForm(CurvePoint)
 	{GET [/curvePoint/update/{id}]}: showUpdateForm(Integer,Model)
 	{GET [/curvePoint/delete/{id}]}: deleteBid(Integer,Model)
 	{POST [/curvePoint/update/{id}]}: updateBid(Integer,CurvePoint,BindingResult,Model)
-16:20:31.596 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-16:20:31.606 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-16:20:31.612 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-16:20:31.612 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-16:20:31.612 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-16:20:31.613 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-16:20:31.613 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-16:20:31.613 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3cf41ffd
-16:20:31.613 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@574e3953
-16:20:31.613 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-16:20:31.613 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-16:20:31.618 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/list", parameters={}
-16:20:31.618 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#home(Model)
-16:20:31.620 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=[CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null)]}
-16:20:31.620 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/list]
-16:20:31.621 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/list]
-16:20:31.621 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+16:57:53.132 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+16:57:53.142 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+16:57:53.147 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+16:57:53.147 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+16:57:53.147 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+16:57:53.148 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+16:57:53.148 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+16:57:53.148 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@29c7a145
+16:57:53.148 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4589a694
+16:57:53.148 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+16:57:53.148 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+16:57:53.149 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/list", parameters={}
+16:57:53.149 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#home(Model)
+16:57:53.152 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=[CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null)]}
+16:57:53.152 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/list]
+16:57:53.152 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/list]
+16:57:53.152 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
 ]]></system-out>
   </testcase>
-  <testcase name="getAddCurve" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.043">
-    <system-out><![CDATA[16:20:31.628 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-16:20:31.628 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-16:20:31.628 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-16:20:31.629 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-16:20:31.630 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-16:20:31.630 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-16:20:31.630 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-16:20:31.631 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-16:20:31.631 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-16:20:31.633 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-16:20:31.634 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-16:20:31.634 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
-16:20:31.634 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-16:20:31.634 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-16:20:31.634 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-16:20:31.638 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+  <testcase name="getAddCurve" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.035">
+    <system-out><![CDATA[16:57:53.160 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+16:57:53.160 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+16:57:53.160 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+16:57:53.161 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+16:57:53.161 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+16:57:53.162 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+16:57:53.162 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+16:57:53.162 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+16:57:53.162 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+16:57:53.164 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+16:57:53.165 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+16:57:53.165 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+16:57:53.165 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+16:57:53.165 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+16:57:53.165 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+16:57:53.168 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
 	c.n.s.c.CurveController:
-	{ [/curvePoint/list]}: home(Model)
 	{POST [/curvePoint/validate]}: validate(CurvePoint,BindingResult,Model)
+	{ [/curvePoint/list]}: home(Model)
 	{GET [/curvePoint/add]}: addBidForm(CurvePoint)
 	{GET [/curvePoint/update/{id}]}: showUpdateForm(Integer,Model)
 	{GET [/curvePoint/delete/{id}]}: deleteBid(Integer,Model)
 	{POST [/curvePoint/update/{id}]}: updateBid(Integer,CurvePoint,BindingResult,Model)
-16:20:31.640 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-16:20:31.654 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-16:20:31.658 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-16:20:31.660 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-16:20:31.661 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-16:20:31.661 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-16:20:31.661 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-16:20:31.661 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@671d19c8
-16:20:31.661 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1c2e1acb
-16:20:31.662 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-16:20:31.662 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-16:20:31.663 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/add", parameters={}
-16:20:31.663 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#addBidForm(CurvePoint)
-16:20:31.665 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=CurvePoint(id=0, CurveId=0, asOfDate=null, term=0.0, value=0.0, creationDate=null), org.springframework.validation.BindingResult.curvePoint=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-16:20:31.665 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/add]
-16:20:31.665 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/add]
-16:20:31.665 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+16:57:53.170 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+16:57:53.183 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+16:57:53.186 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+16:57:53.186 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+16:57:53.186 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+16:57:53.186 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+16:57:53.187 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+16:57:53.187 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6b5d5561
+16:57:53.187 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@718991cd
+16:57:53.187 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+16:57:53.187 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+16:57:53.187 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/add", parameters={}
+16:57:53.188 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#addBidForm(CurvePoint)
+16:57:53.190 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {curvePoint=CurvePoint(id=0, CurveId=0, asOfDate=null, term=0.0, value=0.0, creationDate=null), org.springframework.validation.BindingResult.curvePoint=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+16:57:53.190 [main] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [curvePoint/add]
+16:57:53.190 [main] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [curvePoint/add]
+16:57:53.190 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
 ]]></system-out>
   </testcase>
-  <testcase name="getDeleteCurveTest" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.038">
-    <system-out><![CDATA[16:20:31.671 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-16:20:31.671 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-16:20:31.671 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-16:20:31.671 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-16:20:31.672 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-16:20:31.672 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-16:20:31.672 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-16:20:31.673 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-16:20:31.673 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-16:20:31.675 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-16:20:31.676 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-16:20:31.676 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
-16:20:31.677 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-16:20:31.677 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-16:20:31.677 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-16:20:31.683 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+  <testcase name="getDeleteCurveTest" classname="com.nnk.springboot.controllerTest.CurveControllerTest" time="0.045">
+    <system-out><![CDATA[16:57:53.198 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+16:57:53.198 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+16:57:53.198 [main] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+16:57:53.199 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+16:57:53.199 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+16:57:53.199 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+16:57:53.200 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+16:57:53.200 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+16:57:53.200 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+16:57:53.203 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+16:57:53.204 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+16:57:53.204 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+16:57:53.204 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+16:57:53.204 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+16:57:53.205 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+16:57:53.212 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
 	c.n.s.c.CurveController:
-	{ [/curvePoint/list]}: home(Model)
 	{POST [/curvePoint/validate]}: validate(CurvePoint,BindingResult,Model)
+	{ [/curvePoint/list]}: home(Model)
 	{GET [/curvePoint/add]}: addBidForm(CurvePoint)
 	{GET [/curvePoint/update/{id}]}: showUpdateForm(Integer,Model)
 	{GET [/curvePoint/delete/{id}]}: deleteBid(Integer,Model)
 	{POST [/curvePoint/update/{id}]}: updateBid(Integer,CurvePoint,BindingResult,Model)
-16:20:31.685 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-16:20:31.693 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-16:20:31.697 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-16:20:31.698 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-16:20:31.698 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-16:20:31.698 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-16:20:31.698 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-16:20:31.698 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@99bff40
-16:20:31.698 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7bb15812
-16:20:31.698 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-16:20:31.698 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
-16:20:31.700 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/delete/1", parameters={}
-16:20:31.700 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#deleteBid(Integer, Model)
-16:20:31.704 [main] INFO com.nnk.springboot.controllers.CurveController - success for  delete curvePoint
-16:20:31.705 [main] DEBUG org.springframework.web.servlet.view.RedirectView - View [RedirectView], model {curvePoint=[CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null)]}
-16:20:31.705 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 302 FOUND
+16:57:53.213 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+16:57:53.221 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+16:57:53.227 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+16:57:53.228 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+16:57:53.228 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+16:57:53.228 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+16:57:53.228 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+16:57:53.228 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7e62265d
+16:57:53.228 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1199cc70
+16:57:53.228 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+16:57:53.228 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+16:57:53.231 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/curvePoint/delete/1", parameters={}
+16:57:53.232 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.nnk.springboot.controllers.CurveController#deleteBid(Integer, Model)
+16:57:53.236 [main] INFO com.nnk.springboot.controllers.CurveController - success for  delete curvePoint
+16:57:53.236 [main] DEBUG org.springframework.web.servlet.view.RedirectView - View [RedirectView], model {curvePoint=[CurvePoint(id=0, CurveId=0, asOfDate=null, term=2.0, value=4.0, creationDate=null)]}
+16:57:53.236 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 302 FOUND
 ]]></system-out>
   </testcase>
 </testsuite>

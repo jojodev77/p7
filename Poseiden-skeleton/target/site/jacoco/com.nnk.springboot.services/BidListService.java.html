@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BidListService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.services</a> &gt; <span class="el_source">BidListService.java</span></div><h1>BidListService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.services;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BidListService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.services</a> &gt; <span class="el_source">BidListService.java</span></div><h1>BidListService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.services;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -20,42 +20,44 @@ import com.nnk.springboot.repositories.BidListRepository;
 	/**
 	 * @Description method for add BidList
 	 */
-	public String addBidList(BidList bidlist) {
+	public ResponseEntity&lt;?&gt; addBidList(BidList bidlist) {
 <span class="pc bpc" id="L24" title="1 of 2 branches missed.">		if (bidlist == null) {</span>
-<span class="nc" id="L25">			ResponseEntity.status(400).body(&quot;rating is null&quot;);</span>
+<span class="nc" id="L25">			new ResponseEntity&lt;&gt;(&quot;BidList is null&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
+<span class="nc" id="L26">			new RuntimeException();</span>
+				}
+<span class="fc" id="L28">		LocalDateTime now = LocalDateTime.now();</span>
+<span class="fc" id="L29">		bidlist.setCreationDate(now);</span>
+<span class="fc" id="L30">		Optional&lt;BidList&gt; b = bidListRepository.findById(bidlist.getId());</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">		if (b.isPresent()) {</span>
+<span class="fc" id="L32">			new ResponseEntity&lt;&gt;(&quot;BidList exist in database&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
 		}
-<span class="fc" id="L27">		LocalDateTime now = LocalDateTime.now();</span>
-<span class="fc" id="L28">		bidlist.setCreationDate(now);</span>
-<span class="fc" id="L29">		Optional&lt;BidList&gt; b = bidListRepository.findById(bidlist.getId());</span>
-<span class="pc bpc" id="L30" title="1 of 2 branches missed.">		if (b.isPresent()) {</span>
-<span class="fc" id="L31">			new ResponseEntity&lt;&gt;(&quot;BidList exist in database&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
-		}
-<span class="fc" id="L33">		bidListRepository.save(bidlist);</span>
-<span class="fc" id="L34">		return &quot;BidList add with success&quot;;</span>
+<span class="fc" id="L34">		bidListRepository.save(bidlist);</span>
+<span class="fc" id="L35">		return new ResponseEntity&lt;&gt;(&quot;bidList add with success&quot;, HttpStatus.OK);</span>
 	}
 	
 	/**
 	 * @Description method for update BidList
 	 */
-	public BidList updateBidList(int id, BidList bidList) {
-<span class="fc" id="L41">		LocalDateTime now = LocalDateTime.now();</span>
-<span class="fc" id="L42">		bidList.setRevisionDate(now);</span>
-<span class="fc" id="L43">		Optional&lt;BidList&gt; b = bidListRepository.findById( id);</span>
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">		if (b.isEmpty()) {</span>
-<span class="nc" id="L45">			new ResponseEntity&lt;&gt;(&quot;BidList not exist in database&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
+	public ResponseEntity&lt;?&gt; updateBidList(int id, BidList bidList) {
+<span class="fc" id="L42">		LocalDateTime now = LocalDateTime.now();</span>
+<span class="fc" id="L43">		bidList.setRevisionDate(now);</span>
+<span class="fc" id="L44">		Optional&lt;BidList&gt; b = bidListRepository.findById( id);</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">		if (b.isEmpty()) {</span>
+<span class="nc" id="L46">			new ResponseEntity&lt;&gt;(&quot;BidList not exist in database&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
+<span class="nc" id="L47">			new RuntimeException();</span>
 		}
 		
-<span class="fc" id="L48">		bidListRepository.save(bidList);</span>
-<span class="fc" id="L49">		return b.get();</span>
+<span class="fc" id="L50">		bidListRepository.save(bidList);</span>
+<span class="fc" id="L51">		return new ResponseEntity&lt;&gt;(&quot;bidList update with success&quot;, HttpStatus.OK);</span>
 	}
 	
 	/**
 	 * @Description method for update BidList
 	 */
-	public String deleteBidList(long id) {
-<span class="fc" id="L56">		Optional&lt;BidList&gt; b = bidListRepository.findById(id);</span>
-<span class="fc" id="L57">		bidListRepository.delete(b.get());</span>
-<span class="fc" id="L58">		return &quot;BidList delete with success&quot;;</span>
+	public ResponseEntity&lt;?&gt; deleteBidList(long id) {
+<span class="fc" id="L58">		Optional&lt;BidList&gt; b = bidListRepository.findById(id);</span>
+<span class="fc" id="L59">		bidListRepository.delete(b.get());</span>
+<span class="fc" id="L60">		return new ResponseEntity&lt;&gt;(&quot;bidList delete with success&quot;, HttpStatus.OK);</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

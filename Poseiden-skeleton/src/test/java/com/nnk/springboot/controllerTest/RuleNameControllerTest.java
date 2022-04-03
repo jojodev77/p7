@@ -19,6 +19,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -154,7 +156,8 @@ private MockMvc mockMvc;
 		ruleName.setSqlStr("fff");
 		List<RuleName> lr = new ArrayList<>();
 		lr.add(ruleName);
-		lenient().when(ruleNameService.updateBidList(1, ruleName)).thenReturn(ruleName);
+		ResponseEntity resp = new ResponseEntity<>("ruleName update with success", HttpStatus.OK);
+		lenient().when(ruleNameService.updateBidList(1, ruleName)).thenReturn(resp);
 		lenient().when(ruleNameRepository.findById(anyLong())).thenReturn(Optional.of(ruleName));
 		
 		try {
@@ -180,7 +183,8 @@ private MockMvc mockMvc;
 		ruleName.setSqlStr("fff");
 		List<RuleName> lr = new ArrayList<>();
 		lr.add(ruleName);
-		lenient().when(ruleNameService.deleteBidList(anyLong())).thenReturn("");
+		ResponseEntity resp = new ResponseEntity<>("ruleName delete with success", HttpStatus.OK);
+		lenient().when(ruleNameService.deleteBidList(anyLong())).thenReturn(resp);
 		lenient().when(ruleNameRepository.findById(anyLong())).thenReturn(Optional.of(ruleName));
 		lenient().when(ruleNameRepository.findAll()).thenReturn(lr);
 		

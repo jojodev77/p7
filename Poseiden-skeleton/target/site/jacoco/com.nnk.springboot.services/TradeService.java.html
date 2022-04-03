@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TradeService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.services</a> &gt; <span class="el_source">TradeService.java</span></div><h1>TradeService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.services;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TradeService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.services</a> &gt; <span class="el_source">TradeService.java</span></div><h1>TradeService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.services;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
 
 @Service
-<span class="fc" id="L16">public class TradeService {</span>
+<span class="fc" id="L17">public class TradeService {</span>
 	
 	@Autowired
 	TradeRepository tradeRepository;
@@ -22,41 +23,41 @@ import com.nnk.springboot.repositories.TradeRepository;
 	/**
 	 * @Description method for add trade
 	 */
-	public String addRrade(Trade trade) {
-<span class="pc bpc" id="L26" title="1 of 2 branches missed.">		if (trade == null) {</span>
-<span class="nc" id="L27">			ResponseEntity.status(400).body(&quot;rating is null&quot;);</span>
+	public ResponseEntity&lt;?&gt; addRrade(Trade trade) {
+<span class="pc bpc" id="L27" title="1 of 2 branches missed.">		if (trade == null) {</span>
+<span class="nc" id="L28">			new ResponseEntity&lt;&gt;(&quot;rating is null&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
 		}
-<span class="fc" id="L29">		Optional&lt;Trade&gt; t = tradeRepository.findById(trade.getId());</span>
-<span class="pc bpc" id="L30" title="1 of 2 branches missed.">		if (t.isPresent()) {</span>
-<span class="fc" id="L31">			ResponseEntity.status(400).body(&quot;trade exist in database&quot;);</span>
+<span class="fc" id="L30">		Optional&lt;Trade&gt; t = tradeRepository.findById(trade.getId());</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">		if (t.isPresent()) {</span>
+<span class="fc" id="L32">			new ResponseEntity&lt;&gt;(&quot;trade exist in database&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
 		}
-<span class="fc" id="L33">		LocalDateTime now = LocalDateTime.now();</span>
-<span class="fc" id="L34">		trade.setCreationDate(now);</span>
-<span class="fc" id="L35">		tradeRepository.save(trade);</span>
-<span class="fc" id="L36">		return &quot;trade add with success&quot;;</span>
+<span class="fc" id="L34">		LocalDateTime now = LocalDateTime.now();</span>
+<span class="fc" id="L35">		trade.setCreationDate(now);</span>
+<span class="fc" id="L36">		tradeRepository.save(trade);</span>
+<span class="fc" id="L37">		return new ResponseEntity&lt;&gt;(&quot;trade add with success&quot;, HttpStatus.OK);</span>
 	}
 	
 	/**
 	 * @Description method for update trade
 	 */
-	public Trade updateTrade(int id, Trade trade) {
-<span class="fc" id="L43">		Optional&lt;Trade&gt; t = tradeRepository.findById( id);</span>
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">		if (t.isEmpty()) {</span>
-<span class="nc" id="L45">			ResponseEntity.status(400).body(&quot;trade not exist in database&quot;);</span>
+	public ResponseEntity&lt;?&gt; updateTrade(int id, Trade trade) {
+<span class="fc" id="L44">		Optional&lt;Trade&gt; t = tradeRepository.findById( id);</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">		if (t.isEmpty()) {</span>
+<span class="nc" id="L46">			new ResponseEntity&lt;&gt;(&quot;trade not exist in database&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
 		}
-<span class="fc" id="L47">		LocalDateTime now = LocalDateTime.now();</span>
-<span class="fc" id="L48">		trade.setRevisionDate(now);</span>
-<span class="fc" id="L49">		tradeRepository.save(trade);</span>
-<span class="fc" id="L50">		return t.get();</span>
+<span class="fc" id="L48">		LocalDateTime now = LocalDateTime.now();</span>
+<span class="fc" id="L49">		trade.setRevisionDate(now);</span>
+<span class="fc" id="L50">		tradeRepository.save(trade);</span>
+<span class="fc" id="L51">		return new ResponseEntity&lt;&gt;(&quot;trade update with success&quot;, HttpStatus.OK);</span>
 	}
 	
 	/**
 	 * @Description method for update trade
 	 */
-	public String deleteTrade(long id) {
-<span class="fc" id="L57">		Optional&lt;Trade&gt; t = tradeRepository.findById(id);</span>
-<span class="fc" id="L58">		tradeRepository.delete(t.get());</span>
-<span class="fc" id="L59">		return &quot;trade delete with success&quot;;</span>
+	public ResponseEntity&lt;?&gt; deleteTrade(long id) {
+<span class="fc" id="L58">		Optional&lt;Trade&gt; t = tradeRepository.findById(id);</span>
+<span class="fc" id="L59">		tradeRepository.delete(t.get());</span>
+<span class="fc" id="L60">		return new ResponseEntity&lt;&gt;(&quot;trade delete with success&quot;, HttpStatus.OK);</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

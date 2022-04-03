@@ -6,6 +6,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.BindingResult;
@@ -151,7 +153,8 @@ public class RatingControllerTest {
 		lr.add(rating);
 		BindingResult result = mock(BindingResult.class);
 		lenient().when(result.hasErrors()).thenReturn(true);
-		lenient().when(ratingService.updateRating(1, rating)).thenReturn(rating);
+		ResponseEntity resp = new ResponseEntity<>("rating update with success", HttpStatus.OK);
+		lenient().when(ratingService.updateRating(1, rating)).thenReturn(resp);
 		lenient().when(ratingRepository.findById(anyLong())).thenReturn(Optional.of(rating));
 		
 		try {
@@ -174,8 +177,9 @@ public class RatingControllerTest {
 		rating.setOrderNumber(4);
 		List<Rating> lr = new ArrayList<>();
 		lr.add(rating);
+		ResponseEntity resp = new ResponseEntity<>("ruleName delete with success", HttpStatus.OK);
 		lenient().when(ratingRepository.findById(anyLong())).thenReturn(Optional.of(rating));
-		lenient().when(ratingService.deleteRating(anyLong())).thenReturn("");
+		lenient().when(ratingService.deleteRating(anyLong())).thenReturn(resp);
 		lenient().when(ratingRepository.findAll()).thenReturn(lr);
 		
 		try {

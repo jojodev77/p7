@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,40 +23,40 @@ public class TradeService {
 	/**
 	 * @Description method for add trade
 	 */
-	public String addRrade(Trade trade) {
+	public ResponseEntity<?> addRrade(Trade trade) {
 		if (trade == null) {
-			ResponseEntity.status(400).body("rating is null");
+			new ResponseEntity<>("rating is null", HttpStatus.NOT_ACCEPTABLE);
 		}
 		Optional<Trade> t = tradeRepository.findById(trade.getId());
 		if (t.isPresent()) {
-			ResponseEntity.status(400).body("trade exist in database");
+			new ResponseEntity<>("trade exist in database", HttpStatus.NOT_ACCEPTABLE);
 		}
 		LocalDateTime now = LocalDateTime.now();
 		trade.setCreationDate(now);
 		tradeRepository.save(trade);
-		return "trade add with success";
+		return new ResponseEntity<>("trade add with success", HttpStatus.OK);
 	}
 	
 	/**
 	 * @Description method for update trade
 	 */
-	public Trade updateTrade(int id, Trade trade) {
+	public ResponseEntity<?> updateTrade(int id, Trade trade) {
 		Optional<Trade> t = tradeRepository.findById( id);
 		if (t.isEmpty()) {
-			ResponseEntity.status(400).body("trade not exist in database");
+			new ResponseEntity<>("trade not exist in database", HttpStatus.NOT_ACCEPTABLE);
 		}
 		LocalDateTime now = LocalDateTime.now();
 		trade.setRevisionDate(now);
 		tradeRepository.save(trade);
-		return t.get();
+		return new ResponseEntity<>("trade update with success", HttpStatus.OK);
 	}
 	
 	/**
 	 * @Description method for update trade
 	 */
-	public String deleteTrade(long id) {
+	public ResponseEntity<?> deleteTrade(long id) {
 		Optional<Trade> t = tradeRepository.findById(id);
 		tradeRepository.delete(t.get());
-		return "trade delete with success";
+		return new ResponseEntity<>("trade delete with success", HttpStatus.OK);
 	}
 }

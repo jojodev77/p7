@@ -15,6 +15,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
@@ -65,12 +67,13 @@ public class TradeServiceTest {
 		trade.setDealName("fff");
 		List<Trade> lt = new ArrayList<>();
 		lt.add(trade);
+		ResponseEntity resp = new ResponseEntity<>("trade add with success", HttpStatus.OK);
 		// WHEN
 		lenient().when(tradeRepository.findById(anyLong())).thenReturn(Optional.of(trade));
 		// THEN
 		// THEN
 		// THEN
-		assertEquals(tradeService.addRrade(trade), "trade add with success");
+		assertEquals(tradeService.addRrade(trade), resp);
 
 	}
 	

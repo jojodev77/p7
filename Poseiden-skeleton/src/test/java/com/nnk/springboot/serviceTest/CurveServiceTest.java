@@ -15,6 +15,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
@@ -61,12 +63,13 @@ public class CurveServiceTest {
 		curve.setValue(4);
 		List<CurvePoint> lc = new ArrayList<>();
 		lc.add(curve);
+		ResponseEntity resp = new ResponseEntity<>("curvePoint add with success", HttpStatus.OK);
 		// WHEN
 		lenient().when(curvePointRepository.findById(anyLong())).thenReturn(Optional.of(curve));
 		// THEN
 		// THEN
 		// THEN
-		assertEquals(curvePointService.addCurvePoint(curve), "trade add with success");
+		assertEquals(curvePointService.addCurvePoint(curve), resp);
 
 	}
 	

@@ -24,6 +24,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.BindingResult;
@@ -152,7 +154,8 @@ public class TradeControllerTest {
 		trade.setDealName("fff");
 		List<Trade> lt = new ArrayList<>();
 		lt.add(trade);
-		lenient().when(tradeService.updateTrade(1, trade)).thenReturn(trade);
+		ResponseEntity resp = new ResponseEntity<>("trade update with success", HttpStatus.OK);
+		lenient().when(tradeService.updateTrade(1, trade)).thenReturn(resp);
 		lenient().when(tradeRepository.findById(anyLong())).thenReturn(Optional.of(trade));
 
 		try {
@@ -178,7 +181,8 @@ public class TradeControllerTest {
 		trade.setDealName("fff");
 		List<Trade> lt = new ArrayList<>();
 		lt.add(trade);
-		lenient().when(tradeService.deleteTrade(anyLong())).thenReturn("");
+		ResponseEntity resp = new ResponseEntity<>("trade delete with success", HttpStatus.OK);
+		lenient().when(tradeService.deleteTrade(anyLong())).thenReturn(resp);
 		lenient().when(tradeRepository.findById(anyLong())).thenReturn(Optional.of(trade));
 		lenient().when(tradeRepository.findAll()).thenReturn(lt);
 

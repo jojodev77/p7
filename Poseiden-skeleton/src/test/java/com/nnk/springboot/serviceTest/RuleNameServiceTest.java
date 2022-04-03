@@ -15,6 +15,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.domain.RuleName;
@@ -66,12 +68,13 @@ public class RuleNameServiceTest {
 		ruleName.setSqlStr("fff");
 		List<RuleName> lr = new ArrayList<>();
 		lr.add(ruleName);
+		ResponseEntity resp = new ResponseEntity<>("ruleName add with success", HttpStatus.OK);
 		// WHEN
 		lenient().when(ruleNameRepository.findById(anyLong())).thenReturn(Optional.of(ruleName));
 		// THEN
 		// THEN
 		// THEN
-		assertEquals(ruleNameService.addBidList(ruleName), "ruleName add with success");
+		assertEquals(ruleNameService.addBidList(ruleName), resp);
 
 	}
 	
