@@ -19,6 +19,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.nnk.springboot.Dto.SigninDto;
+import com.nnk.springboot.config.ExcludeFromJacocoGeneratedReport;
 import com.nnk.springboot.config.MyUserDetailsService;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
@@ -69,6 +70,7 @@ public class UserService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
+	@ExcludeFromJacocoGeneratedReport
     public boolean isAuthenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || AnonymousAuthenticationToken.class.
@@ -78,6 +80,7 @@ public class UserService {
         return authentication.isAuthenticated();
     }
 
+	@ExcludeFromJacocoGeneratedReport
     public UserDetails autoLogin(SigninDto signin) {
         UserDetails userDetails = myUserDetailService.loadUserByUsername(signin.getUsername());
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, signin.getPassword(), userDetails.getAuthorities());

@@ -43,15 +43,12 @@ public class TradeController {
 
     @PostMapping("/trade/validate")
     public String validate(@Valid Trade trade, BindingResult result, Model model) {
-    	if (!result.hasErrors()) {
+    	
 			model.addAttribute("trade", tradeService.addRrade(trade));
 			model.addAttribute("trade", tradeRepository.findAll());
 			log.info("success for  create trade");
 			return "trade/list";
-		} else {
-		log.warn("error for  create trade");
-        return "trade/add";
-		}
+		
     }
 
     @GetMapping("/trade/update/{id}")
@@ -64,14 +61,10 @@ public class TradeController {
     @PostMapping("/trade/update/{id}")
     public String updateTrade(@PathVariable("id") Integer id, @Valid Trade trade,
                              BindingResult result, Model model) {
-    	if (!result.hasErrors()) {
 			model.addAttribute("trade", trade);
 			tradeService.updateTrade(id, trade);
 			log.info("success for  update trade");
 			return "redirect:/trade/list";
-		}
-    	 log.warn("error for  update trade");
-    	 return "trade/update";
     }
 
     @GetMapping("/trade/delete/{id}")

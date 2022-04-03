@@ -1,5 +1,6 @@
 package com.nnk.springboot.controllerTest;
 
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.lenient;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -9,6 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,10 +20,14 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.nnk.springboot.Dto.SigninDto;
 import com.nnk.springboot.controllers.UserController;
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.services.UserService;
@@ -169,6 +175,92 @@ public class UserControllerTest {
 			  .perform(get("/user/update/1"))
 			  .andExpect(status().isOk())
 			  .andExpect(view().name("user/update"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description test get for delete user
+	 */
+	@Test
+	public void getDeleteTest() {
+		User u = new User();
+		u.setFullname("ddd");
+		u.setPassword("sdfghjklDf888#");
+		u.setUsername("ggghcfff");
+		u.setId(1);
+		userRepository.save(u);
+		List<User> lu= new ArrayList<>();
+		try {
+			mockMvc
+			  .perform(get("/user/delete/1"))
+			  .andExpect(view().name("redirect:/user/list"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * @Description test get update user
+	 */
+	@Test
+	public void getUpdateUser() {
+		User u = new User();
+		u.setFullname("ddd");
+		u.setPassword("sdfghjklDf888#");
+		u.setUsername("ggghcfff");
+		u.setId(1);
+		userRepository.save(u);
+		List<User> lu= new ArrayList<>();
+		lenient().when(userRepository.findById((int) anyLong())).thenReturn(Optional.of(u));
+		
+		try {
+			mockMvc
+			  .perform(get("/user/update/1"))
+			  .andExpect(status().isOk())
+			  .andExpect(view().name("user/update"))
+			  .andExpect(model().attribute("user", u));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+//	/**
+//	 * @Description test post update user
+//	 */
+//	@Test
+//	public void postUpdateUser() {
+//		User u = new User();
+//		u.setFullname("ddd");
+//		u.setPassword("sdfghjklDf888#");
+//		u.setUsername("ggghcfff");
+//		u.setId(1);
+//		lenient().when(userRepository.findById((int) anyLong())).thenReturn(Optional.of(u));
+//		
+//		try {
+//			mockMvc
+//			  .perform(post("/user/update/1"))
+//			  .andExpect(view().name("redirect:/user/list"));
+//			//  .andExpect(model().attribute("ruleName", ruleName));
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+	
+	/**
+	 * @Description test get for access userH interface
+	 */
+	@Test
+	public void getaccessUserHTest() {
+		try {
+			mockMvc
+			  .perform(get("/user/userH"))
+			  .andExpect(view().name("user/userH"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

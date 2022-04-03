@@ -50,8 +50,7 @@ public class TradeControllerTest {
 	@Mock
 	TradeService tradeService;
 
-	@Mock
-	Trade trade = new Trade();
+
 	
 
 	@BeforeEach
@@ -99,21 +98,17 @@ public class TradeControllerTest {
 	 */
 	@Test
 	public void postAddTrade() {
-		
-		trade.setBook("fff");
-		trade.setCreationName("ghj");
-		trade.setAccount("hghgh");
-		trade.setDealName("fff");
-		trade.setBuyPrice(5);
-		trade.setSecurity("ghvg");
+		Trade t = new Trade();
+		t.setType("ghj");
+		t.setBuyQuantity(2);
+		t.setAccount("hghgh");
 		List<Trade> lt = new ArrayList<>();
-		lt.add(trade);
-		lenient().when(tradeRepository.findAll()).thenReturn(lt);
+		lt.add(t);
 		try {
+			 BindingResult result = mock(BindingResult.class);
+			 lenient().when(result.hasErrors()).thenReturn(false);
 			mockMvc.perform(post("/trade/validate"))
-			.andExpect(status().isOk())
-					.andExpect(view().name("trade/list"))
-					.andExpect(model().attribute("trade", lt));
+			.andExpect(view().name("trade/list"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -133,6 +128,8 @@ public class TradeControllerTest {
 		List<Trade> lt = new ArrayList<>();
 		lt.add(trade);
 		lenient().when(tradeRepository.findById(anyLong())).thenReturn(Optional.of(trade));
+		 BindingResult result = mock(BindingResult.class);
+		 lenient().when(result.hasErrors()).thenReturn(false);
 
 		try {
 			mockMvc.perform(get("/trade/update/1")).andExpect(status().isOk()).andExpect(view().name("trade/update"))
@@ -155,13 +152,15 @@ public class TradeControllerTest {
 		trade.setDealName("fff");
 		List<Trade> lt = new ArrayList<>();
 		lt.add(trade);
-		BindingResult result = mock(BindingResult.class);
-		lenient().when(result.hasErrors()).thenReturn(false);
 		lenient().when(tradeService.updateTrade(1, trade)).thenReturn(trade);
 		lenient().when(tradeRepository.findById(anyLong())).thenReturn(Optional.of(trade));
 
 		try {
-			mockMvc.perform(post("/trade/update/1")).andExpect(status().isOk()).andExpect(view().name("trade/update"));
+			 BindingResult result = mock(BindingResult.class);
+			 lenient().when(result.hasErrors()).thenReturn(false);
+			mockMvc.perform(post("/trade/update/1"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("trade/list"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
