@@ -11,5 +11,5 @@ poseidon,com.nnk.springboot.services,TradeService,10,67,3,3,2,18,3,4,0,4
 poseidon,com.nnk.springboot.services,RatingService,15,52,3,3,3,13,3,4,0,4
 poseidon,com.nnk.springboot.services,RuleNameService,10,57,3,3,2,14,3,4,0,4
 poseidon,com.nnk.springboot.services,CurvePointService,10,67,3,3,2,18,3,4,0,4
-poseidon,com.nnk.springboot.services,UserService,34,45,3,3,7,11,4,5,1,5
+poseidon,com.nnk.springboot.services,UserService,31,55,2,4,7,14,3,6,1,5
 poseidon,com.nnk.springboot.services,BidListService,9,66,3,3,2,18,3,4,0,4

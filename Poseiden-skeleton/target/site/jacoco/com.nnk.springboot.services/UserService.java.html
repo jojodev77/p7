@@ -42,18 +42,21 @@ import com.nnk.springboot.repositories.UserRepository;
 	 */
 	public ResponseEntity&lt;?&gt; createUser(User user) {
 <span class="fc" id="L44">		Optional&lt;User&gt; u = userRepository.findByUsername(user.getUsername());</span>
-<span class="pc bpc" id="L45" title="1 of 2 branches missed.">		if (u.isPresent()) {</span>
-<span class="nc" id="L46">			return new ResponseEntity&lt;&gt;(&quot;User is present in db&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">		if (!u.isEmpty()) {</span>
+<span class="nc" id="L46">			  new RuntimeException();</span>
+<span class="nc" id="L47">			return new ResponseEntity&lt;&gt;(&quot;User is present in db&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
+			
 		}
-<span class="pc bpc" id="L48" title="1 of 2 branches missed.">		if (!isValid(user.getPassword())) {</span>
-<span class="fc" id="L49">			return new ResponseEntity&lt;&gt;(&quot;password is not good&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">		if (!isValid(user.getPassword())) {</span>
+<span class="fc" id="L51">			  new RuntimeException();</span>
+<span class="fc" id="L52">			return new ResponseEntity&lt;&gt;(&quot;password is not good&quot;, HttpStatus.NOT_ACCEPTABLE);</span>
 		} else {
 		
-<span class="nc" id="L52">		  BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();</span>
-<span class="nc" id="L53">          user.setPassword(encoder.encode(user.getPassword()));</span>
+<span class="nc" id="L55">		  BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();</span>
+<span class="nc" id="L56">          user.setPassword(encoder.encode(user.getPassword()));</span>
           
-<span class="nc" id="L55">        	  userRepository.save(user);</span>
-<span class="nc" id="L56">        	  return new ResponseEntity&lt;&gt;(&quot;User create with success&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L58">        	  userRepository.save(user);</span>
+<span class="nc" id="L59">        	  return new ResponseEntity&lt;&gt;(&quot;User create with success&quot;, HttpStatus.OK);</span>
 		}
 	}
 	
@@ -61,14 +64,15 @@ import com.nnk.springboot.repositories.UserRepository;
 	 * @description method for create User
 	 */
 	public UserDetails signin(SigninDto signin) {
-<span class="pc bpc" id="L64" title="1 of 2 branches missed.">		if (signin == null) {</span>
-<span class="nc" id="L65">			ResponseEntity.status(400).body(&quot;Informations for signin not found&quot;);</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">		if (signin.getUsername() == null) {</span>
+<span class="fc" id="L68">			ResponseEntity.status(400).body(&quot;Informations for signin not found&quot;);</span>
+<span class="fc" id="L69">			new RuntimeException();</span>
 		}
-<span class="fc" id="L67">		return myUserDetailService.loadUserByUsername(signin.getUsername());</span>
+<span class="fc" id="L71">		return myUserDetailService.loadUserByUsername(signin.getUsername());</span>
 		
 	}
 	
-<span class="fc" id="L71">	private static final Logger logger = LoggerFactory.getLogger(UserService.class);</span>
+<span class="fc" id="L75">	private static final Logger logger = LoggerFactory.getLogger(UserService.class);</span>
 
 	@ExcludeFromJacocoGeneratedReport
     public boolean isAuthenticated() {
@@ -95,17 +99,17 @@ import com.nnk.springboot.repositories.UserRepository;
     }
     
     public String resultError(String result) {
-<span class="nc" id="L98">    	return result;</span>
+<span class="nc" id="L102">    	return result;</span>
     }
     
     private static final String PASSWORD_PATTERN =
             &quot;^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&amp;()–[{}]:;',?/*~$^+=&lt;&gt;]).{6,20}$&quot;;
 
-<span class="fc" id="L104">    private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);</span>
+<span class="fc" id="L108">    private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);</span>
 
     public boolean isValid(final String password) {
-<span class="fc" id="L107">        Matcher matcher = pattern.matcher(password);</span>
-<span class="fc" id="L108">        return matcher.matches();</span>
+<span class="fc" id="L111">        Matcher matcher = pattern.matcher(password);</span>
+<span class="fc" id="L112">        return matcher.matches();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

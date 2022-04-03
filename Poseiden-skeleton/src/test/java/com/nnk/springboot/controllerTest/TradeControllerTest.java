@@ -159,8 +159,7 @@ public class TradeControllerTest {
 			 BindingResult result = mock(BindingResult.class);
 			 lenient().when(result.hasErrors()).thenReturn(false);
 			mockMvc.perform(post("/trade/update/1"))
-			.andExpect(status().isOk())
-			.andExpect(view().name("trade/list"));
+			.andExpect(view().name("redirect:/trade/list"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

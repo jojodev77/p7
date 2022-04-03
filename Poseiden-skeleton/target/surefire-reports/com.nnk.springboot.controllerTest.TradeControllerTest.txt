@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.nnk.springboot.controllerTest.TradeControllerTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.344 s <<< FAILURE! - in com.nnk.springboot.controllerTest.TradeControllerTest
-com.nnk.springboot.controllerTest.TradeControllerTest.postUpdateTrade  Time elapsed: 0.048 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<302>
-	at com.nnk.springboot.controllerTest.TradeControllerTest.postUpdateTrade(TradeControllerTest.java:162)
-
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 s - in com.nnk.springboot.controllerTest.TradeControllerTest

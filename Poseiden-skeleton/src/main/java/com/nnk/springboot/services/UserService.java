@@ -42,10 +42,13 @@ public class UserService {
 	 */
 	public ResponseEntity<?> createUser(User user) {
 		Optional<User> u = userRepository.findByUsername(user.getUsername());
-		if (u.isPresent()) {
+		if (!u.isEmpty()) {
+			  new RuntimeException();
 			return new ResponseEntity<>("User is present in db", HttpStatus.NOT_ACCEPTABLE);
+			
 		}
 		if (!isValid(user.getPassword())) {
+			  new RuntimeException();
 			return new ResponseEntity<>("password is not good", HttpStatus.NOT_ACCEPTABLE);
 		} else {
 		
@@ -61,8 +64,9 @@ public class UserService {
 	 * @description method for create User
 	 */
 	public UserDetails signin(SigninDto signin) {
-		if (signin == null) {
+		if (signin.getUsername() == null) {
 			ResponseEntity.status(400).body("Informations for signin not found");
+			new RuntimeException();
 		}
 		return myUserDetailService.loadUserByUsername(signin.getUsername());
 		

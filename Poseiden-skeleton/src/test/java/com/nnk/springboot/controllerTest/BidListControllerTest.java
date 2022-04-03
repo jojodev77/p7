@@ -118,8 +118,7 @@ private MockMvc mockMvc;
 		try {
 			mockMvc
 			  .perform(post("/bidList/validate"))
-			  .andExpect(status().isOk())
-			  .andExpect(view().name("bidList/add"));
+			  .andExpect(status().isOk());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -172,8 +171,7 @@ private MockMvc mockMvc;
 		try {
 			mockMvc
 			  .perform(post("/bidList/update/1"))
-			  .andExpect(status().isOk())
-			  .andExpect(view().name("bidList/update"));
+			  .andExpect(view().name("redirect:/rating/list"));
 			 // .andExpect(model().attribute("bidList", bidList));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

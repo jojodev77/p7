@@ -1,5 +1,6 @@
 package com.nnk.springboot.serviceTest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -15,6 +16,8 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -55,13 +58,30 @@ public class UserServiceTest {
 		user.setUsername("hgj");
 		User user1 = new User();
 		user1.setFullname("jDDhh");
-		user1.setPassword("ggggA#hhfffff.");
+		user1.setPassword("ggggA#hhf1ffff.");
 		user1.setUsername("hgDDj");
 		//WHEN
 		lenient().when(userRepository.findById((int) anyLong())).thenReturn(Optional.of(user1));
 		//THEN
 		userService.createUser(user);
 		verify(userService).createUser(user);
+	}
+	
+	/**
+	 * @Description test createUser with erro when password is null
+	 */
+	@Test
+	public void createUserWithErrorWhenPasswordIsNnull() {
+		//GIVEN
+		User user = new User();
+		user.setFullname("jhffha");
+		user.setPassword("ggg.");
+		user.setUsername("hgjqfff");
+		userRepository.save(user);
+		//WHEN
+		lenient().when(userRepository.findById((int) anyLong())).thenReturn(null);
+		//THEN
+		assertEquals(userService.createUser(user), new ResponseEntity<>("password is not good", HttpStatus.NOT_ACCEPTABLE));
 	}
 	
 	/**
@@ -85,6 +105,20 @@ public class UserServiceTest {
 		//THEN
 		userService.signin(user1);
 		verify(userService).signin(user1);
+	}
+	
+	/**
+	 * @Description test signin with error
+	 */
+	@Test
+	public void signinUserWithErrorWhenSigninIsNull() {
+		//GIVEN
+		SigninDto user1 = new SigninDto();
+		user1.setPassword("ggggA#hhfffff.");
+		user1.setUsername(null);
+		//WHEN
+		assertEquals(userService.signin(user1), null);
+		//THEN
 	}
 	
 
