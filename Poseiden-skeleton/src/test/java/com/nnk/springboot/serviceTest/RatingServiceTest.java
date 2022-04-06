@@ -18,11 +18,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.domain.Rating;
-import com.nnk.springboot.repositories.CurvePointRepository;
 import com.nnk.springboot.repositories.RatingRepository;
-import com.nnk.springboot.services.CurvePointService;
 import com.nnk.springboot.services.RatingService;
 
 @ExtendWith(MockitoExtension.class)

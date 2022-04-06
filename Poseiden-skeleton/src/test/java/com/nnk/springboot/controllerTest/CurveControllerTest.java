@@ -22,13 +22,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.nnk.springboot.controllers.CurveController;
-import com.nnk.springboot.controllers.RatingController;
 import com.nnk.springboot.domain.CurvePoint;
-import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.repositories.CurvePointRepository;
-import com.nnk.springboot.repositories.RatingRepository;
 import com.nnk.springboot.services.CurvePointService;
-import com.nnk.springboot.services.RatingService;
 
 @ExtendWith(MockitoExtension.class)
 public class CurveControllerTest {

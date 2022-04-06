@@ -102,6 +102,9 @@ public class UserService {
     	return result;
     }
     
+    /**
+     * @Description method for validity password since pattern validator
+     */
     private static final String PASSWORD_PATTERN =
             "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{6,20}$";
 

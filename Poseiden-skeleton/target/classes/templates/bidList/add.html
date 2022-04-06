@@ -12,7 +12,7 @@
 		<div class="row">
 			<h2>Add New Bid</h2>
 		</div>
-
+		<p th:text="${error} ?: ''"></p>
 		<div class="row">
 			<form action="#" th:action="@{/bidList/validate}"
 				th:object="${bidList}" method="post" class="form-horizontal"

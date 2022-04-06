@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.repositories.RatingRepository;
 import com.nnk.springboot.services.RatingService;
@@ -30,17 +29,34 @@ public class RatingController {
 	
 	private static final Logger log = LogManager.getLogger(RatingController.class);
 
+	/**
+	 * @Description method get for list rating
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/rating/list")
 	public String home(Model model) {
 		model.addAttribute("rating", ratingRepository.findAll());
 		return "rating/list";
 	}
 
+	/**
+	 * @Description method get for page add rating
+	 * @param rating
+	 * @return
+	 */
 	@GetMapping("/rating/add")
 	public String addRatingForm(Rating rating) {
 		return "rating/add";
 	}
 
+	/***
+	 * @Description method post for add rating
+	 * @param rating
+	 * @param result
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/rating/validate")
 	public String validate(@Valid Rating rating, BindingResult result, Model model) {
 		if (!result.hasErrors()) {
@@ -55,19 +71,37 @@ public class RatingController {
 
 	}
 
+	/**
+	 * @Description method get for page update rating
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/rating/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		Rating rating = ratingRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid rating Id:" + id));
 		model.addAttribute("rating", rating);
 		return "rating/update";
 	}
+	
 
+	/**
+	 * @Descriptiion method post for uupdate rating
+	 * @param id
+	 * @param rating
+	 * @param result
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/rating/update/{id}")
 	public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating, BindingResult result,
 			Model model) {
 		if (!result.hasErrors()) {
 			model.addAttribute("rating", rating);
 			ratingService.updateRating(id, rating);
+			if (ratingService.updateRating(id, rating).getStatusCodeValue() != 200) {
+				  model.addAttribute("error", "Sorry, error as occured");
+			}
 			log.info("success for  update rating");
 			return "redirect:/rating/list";
 		}
@@ -75,9 +109,18 @@ public class RatingController {
 		return "rating/update";
 	}
 
+	/**
+	 * @Description Method get for delete rating
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/rating/delete/{id}")
 	public String deleteRating(@PathVariable("id") long id, Model model) {
 		ratingService.deleteRating(id);
+		if (ratingService.deleteRating(id).getStatusCodeValue() != 200) {
+			  model.addAttribute("error", "Sorry, error as occured");
+		}
 		model.addAttribute("rating", ratingRepository.findAll());
 		log.info("success for  delete rating");
 		return "redirect:/rating/list";

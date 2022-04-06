@@ -1,12 +1,15 @@
 package com.nnk.springboot.domain;
 
-import javax.persistence.*;
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
-
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 
 @Entity

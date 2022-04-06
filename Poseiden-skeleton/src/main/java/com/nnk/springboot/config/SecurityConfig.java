@@ -8,14 +8,10 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.nnk.springboot.repositories.UserRepository;
-
-import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 @EnableWebSecurity
@@ -33,11 +29,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable() // Disabling http basic
                 .cors() // Enabling cors
                 .and()
-                .authorizeRequests().antMatchers("/user/add/**", "/home/**", "/css/styles/**", "/user/login/**", "//**" , "/user/list/**",  "/user/validate/**").permitAll()
+                .authorizeRequests().antMatchers("/user/add/**", "/home/**", "/css/styles/**", "/user/login/**", "//**" , "/user/list/**",  "/user/validate/**","/403/**").permitAll()
     			.anyRequest().authenticated()
+    			.and().logout().logoutUrl("/403")
+    			 .and().exceptionHandling().accessDeniedPage("/403")
     			.and()
-                .logout()
-                    .permitAll();
+                .logout();
     }
 
     // Creating a bean for the password encoder

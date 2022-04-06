@@ -19,11 +19,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.nnk.springboot.domain.BidList;
-import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.BidListRepository;
-import com.nnk.springboot.repositories.CurvePointRepository;
 import com.nnk.springboot.services.BidListService;
-import com.nnk.springboot.services.CurvePointService;
 
 @ExtendWith(MockitoExtension.class)
 public class BidListServiceTest {

@@ -18,11 +18,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.domain.RuleName;
-import com.nnk.springboot.repositories.CurvePointRepository;
 import com.nnk.springboot.repositories.RuleNameRepository;
-import com.nnk.springboot.services.CurvePointService;
 import com.nnk.springboot.services.RuleNameService;
 
 @ExtendWith(MockitoExtension.class)

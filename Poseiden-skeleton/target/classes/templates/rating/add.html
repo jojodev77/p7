@@ -12,7 +12,7 @@
 	<div class="row">
 		<h2>Add New Rating</h2>
 	</div>
-
+	<p th:text="${error} ?: ''"></p>
 	<div class="row">
 		<form action="#" th:action="@{/rating/validate}" th:object="${rating}" method="post" class="form-horizontal" style="width: 100%">
 			<div class="form-group">

@@ -26,13 +26,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.BindingResult;
 
 import com.nnk.springboot.controllers.BidListController;
-import com.nnk.springboot.controllers.RatingController;
 import com.nnk.springboot.domain.BidList;
-import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.repositories.BidListRepository;
-import com.nnk.springboot.repositories.RatingRepository;
 import com.nnk.springboot.services.BidListService;
-import com.nnk.springboot.services.RatingService;
 
 @ExtendWith(MockitoExtension.class)
 public class BidListControllerTest {

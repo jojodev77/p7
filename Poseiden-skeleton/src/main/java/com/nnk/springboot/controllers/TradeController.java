@@ -29,6 +29,11 @@ public class TradeController {
 	
 	private static final Logger log = LogManager.getLogger(TradeController.class);
 
+	/**
+	 * @Description method for get list trade
+	 * @param model
+	 * @return
+	 */
     @RequestMapping("/trade/list")
     public String home(Model model)
     {
@@ -36,11 +41,23 @@ public class TradeController {
         return "trade/list";
     }
 
+    /**
+     * @Description method get for page add trade
+     * @param bid
+     * @return
+     */
     @GetMapping("/trade/add")
     public String addUser(Trade bid) {
         return "trade/add";
     }
 
+    /**
+     * @Description method post for add trade
+     * @param trade
+     * @param result
+     * @param model
+     * @return
+     */
     @PostMapping("/trade/validate")
     public String validate(@Valid Trade trade, BindingResult result, Model model) {
     	
@@ -51,25 +68,52 @@ public class TradeController {
 		
     }
 
+    /**
+     * @Description method get for page update trade
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping("/trade/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
     	Trade trade = tradeRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid trade Id:" + id));
     	model.addAttribute("trade", trade);
         return "trade/update";
     }
+    
 
+    /**
+     * @Description method post for update trade
+     * @param id
+     * @param trade
+     * @param result
+     * @param model
+     * @return
+     */
     @PostMapping("/trade/update/{id}")
     public String updateTrade(@PathVariable("id") Integer id, @Valid Trade trade,
                              BindingResult result, Model model) {
 			model.addAttribute("trade", trade);
 			tradeService.updateTrade(id, trade);
+			if (tradeService.updateTrade(id, trade).getStatusCodeValue() != 200) {
+				  model.addAttribute("error", "Sorry, error as occured");
+			}
 			log.info("success for  update trade");
 			return "redirect:/trade/list";
     }
 
+    /**
+     * @Description method get for delete trade
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping("/trade/delete/{id}")
     public String deleteTrade(@PathVariable("id") Integer id, Model model) {
     	tradeService.deleteTrade(id);
+    	if (tradeService.deleteTrade(id).getStatusCodeValue() != 200) {
+			  model.addAttribute("error", "Sorry, error as occured");
+		}
 		model.addAttribute("trade", tradeRepository.findAll());
 		log.info("success for  delete trade");
         return "redirect:/trade/list";

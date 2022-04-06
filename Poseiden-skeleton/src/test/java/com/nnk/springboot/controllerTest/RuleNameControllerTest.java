@@ -1,6 +1,5 @@
 package com.nnk.springboot.controllerTest;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.lenient;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -24,15 +23,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.nnk.springboot.controllers.CurveController;
 import com.nnk.springboot.controllers.RuleNameController;
-import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.domain.RuleName;
-import com.nnk.springboot.repositories.CurvePointRepository;
 import com.nnk.springboot.repositories.RuleNameRepository;
-import com.nnk.springboot.services.CurvePointService;
 import com.nnk.springboot.services.RuleNameService;
-import com.nnk.springboot.services.TradeService;
 
 @ExtendWith(MockitoExtension.class)
 public class RuleNameControllerTest {

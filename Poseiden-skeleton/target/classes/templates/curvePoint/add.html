@@ -12,7 +12,7 @@
 	<div class="row">
 		<h2>Add New Curve Point</h2>
 	</div>
-
+	<p th:text="${error} ?: ''"></p>
 	<div class="row">
 		<form action="#" th:action="@{/curvePoint/validate}" th:object="${curvePoint}" method="post" class="form-horizontal" style="width: 100%">
 			<div class="form-group">

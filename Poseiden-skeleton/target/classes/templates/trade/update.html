@@ -11,7 +11,7 @@
 	<div class="row">
 		<h2>Update Trade</h2>
 	</div>
-
+	<p th:text="${error} ?: ''"></p>
 	<div class="row">
 		<form action="#" th:action="@{/trade/update/{id}(id=${trade.tradeId})}" th:object="${trade}" method="post" class="form-horizontal" style="width: 100%">
 			<div class="form-group">

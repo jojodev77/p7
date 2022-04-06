@@ -1,9 +1,6 @@
 package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.domain.RuleName;
-import com.nnk.springboot.domain.User;
-import com.nnk.springboot.repositories.RuleNameRepository;
-import com.nnk.springboot.services.RuleNameService;
+import javax.validation.Valid;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
+import com.nnk.springboot.domain.RuleName;
+import com.nnk.springboot.repositories.RuleNameRepository;
+import com.nnk.springboot.services.RuleNameService;
 
 @Controller
 public class RuleNameController {
@@ -29,6 +28,11 @@ public class RuleNameController {
 	
 	private static final Logger log = LogManager.getLogger(RuleNameController.class);
 
+	/**
+	 * @Description get list ruleName
+	 * @param model
+	 * @return
+	 */
     @RequestMapping("/ruleName/list")
     public String home(Model model)
     {
@@ -36,11 +40,23 @@ public class RuleNameController {
         return "ruleName/list";
     }
 
+    /**
+     * @Description get page from add ruleName
+     * @param bid
+     * @return
+     */
     @GetMapping("/ruleName/add")
     public String addRuleForm(RuleName bid) {
         return "ruleName/add";
     }
 
+    /**
+     * @Description method post for create ruleName
+     * @param ruleName
+     * @param result
+     * @param model
+     * @return
+     */
     @PostMapping("/ruleName/validate")
     public String validate(@Valid RuleName ruleName, BindingResult result, Model model) {
     	if (!result.hasErrors()) {
@@ -54,6 +70,12 @@ public class RuleNameController {
     	}
     }
 
+    /**
+     * @Decsription method get for page update ruleName
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping("/ruleName/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
     	RuleName ruleName = ruleNameRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid ruleName Id:" + id));
@@ -61,10 +83,21 @@ public class RuleNameController {
     	return "ruleName/update";
     }
 
+    /**
+     * @Description method post for update ruleName
+     * @param id
+     * @param ruleName
+     * @param result
+     * @param model
+     * @return
+     */
     @PostMapping("/ruleName/update/{id}")
     public String updateRuleName(@PathVariable("id") Integer id, @Valid RuleName ruleName,
                              BindingResult result, Model model) {
     	if (!result.hasErrors()) {
+    		if (ruleNameService.updateBidList(id, ruleName).getStatusCodeValue() != 200) {
+    			  model.addAttribute("error", "Sorry, error as occured");
+			}
 			model.addAttribute("ruleName", ruleName);
 			ruleNameService.updateBidList(id, ruleName);
 			log.info("success for  update ruleName");
@@ -74,9 +107,18 @@ public class RuleNameController {
     	 return "ruleName/update";
     }
 
+    /***
+     * @Description method get for delete ruleName
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping("/ruleName/delete/{id}")
     public String deleteRuleName(@PathVariable("id") Integer id, Model model) {
     	ruleNameService.deleteBidList(id);
+    	if (ruleNameService.deleteBidList(id).getStatusCodeValue() != 200) {
+			  model.addAttribute("error", "Sorry, error as occured");
+		}
 		model.addAttribute("ruleName", ruleNameRepository.findAll());
 		log.info("success for  delete ruleName");
         return "redirect:/ruleName/list";
