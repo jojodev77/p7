@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RuleNameController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">RuleNameController.java</span></div><h1>RuleNameController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RuleNameController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">RuleNameController.java</span></div><h1>RuleNameController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.domain.RuleName;
-import com.nnk.springboot.domain.User;
-import com.nnk.springboot.repositories.RuleNameRepository;
-import com.nnk.springboot.services.RuleNameService;
+import javax.validation.Valid;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,10 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
+import com.nnk.springboot.domain.RuleName;
+import com.nnk.springboot.repositories.RuleNameRepository;
+import com.nnk.springboot.services.RuleNameService;
 
 @Controller
-<span class="fc" id="L22">public class RuleNameController {</span>
+<span class="fc" id="L21">public class RuleNameController {</span>
    
 	@Autowired
 	RuleNameRepository ruleNameRepository;
@@ -27,59 +26,102 @@ import javax.validation.Valid;
 	@Autowired
 	RuleNameService ruleNameService;
 	
-<span class="fc" id="L30">	private static final Logger log = LogManager.getLogger(RuleNameController.class);</span>
+<span class="fc" id="L29">	private static final Logger log = LogManager.getLogger(RuleNameController.class);</span>
 
+	/**
+	 * @Description get list ruleName
+	 * @param model
+	 * @return
+	 */
     @RequestMapping(&quot;/ruleName/list&quot;)
     public String home(Model model)
     {
-<span class="fc" id="L35">    	model.addAttribute(&quot;ruleName&quot;, ruleNameRepository.findAll());</span>
-<span class="fc" id="L36">        return &quot;ruleName/list&quot;;</span>
+<span class="fc" id="L39">    	model.addAttribute(&quot;ruleName&quot;, ruleNameRepository.findAll());</span>
+<span class="fc" id="L40">        return &quot;ruleName/list&quot;;</span>
     }
 
+    /**
+     * @Description get page from add ruleName
+     * @param bid
+     * @return
+     */
     @GetMapping(&quot;/ruleName/add&quot;)
     public String addRuleForm(RuleName bid) {
-<span class="fc" id="L41">        return &quot;ruleName/add&quot;;</span>
+<span class="fc" id="L50">        return &quot;ruleName/add&quot;;</span>
     }
 
+    /**
+     * @Description method post for create ruleName
+     * @param ruleName
+     * @param result
+     * @param model
+     * @return
+     */
     @PostMapping(&quot;/ruleName/validate&quot;)
     public String validate(@Valid RuleName ruleName, BindingResult result, Model model) {
-<span class="pc bpc" id="L46" title="1 of 2 branches missed.">    	if (!result.hasErrors()) {</span>
-<span class="fc" id="L47">			model.addAttribute(&quot;ruleName&quot;, ruleNameService.addBidList(ruleName));</span>
-<span class="fc" id="L48">			model.addAttribute(&quot;ruleName&quot;, ruleNameRepository.findAll());</span>
-<span class="fc" id="L49">			log.info(&quot;success for  create ruleName&quot;);</span>
-<span class="fc" id="L50">			return &quot;ruleName/list&quot;;</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">    	if (!result.hasErrors()) {</span>
+<span class="fc" id="L63">			model.addAttribute(&quot;ruleName&quot;, ruleNameService.addBidList(ruleName));</span>
+<span class="fc" id="L64">			model.addAttribute(&quot;ruleName&quot;, ruleNameRepository.findAll());</span>
+<span class="fc" id="L65">			log.info(&quot;success for  create ruleName&quot;);</span>
+<span class="fc" id="L66">			return &quot;ruleName/list&quot;;</span>
     	} else {
-<span class="nc" id="L52">    	log.warn(&quot;error for  create ruleName&quot;);</span>
-<span class="nc" id="L53">        return &quot;ruleName/add&quot;;</span>
+<span class="nc" id="L68">    	log.warn(&quot;error for  create ruleName&quot;);</span>
+<span class="nc" id="L69">        return &quot;ruleName/add&quot;;</span>
     	}
     }
 
+    /**
+     * @Decsription method get for page update ruleName
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping(&quot;/ruleName/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="pc" id="L59">    	RuleName ruleName = ruleNameRepository.findById((long) id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid ruleName Id:&quot; + id));</span>
-<span class="fc" id="L60">    	model.addAttribute(&quot;ruleName&quot;, ruleName);</span>
-<span class="fc" id="L61">    	return &quot;ruleName/update&quot;;</span>
+<span class="pc" id="L81">    	RuleName ruleName = ruleNameRepository.findById((long) id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid ruleName Id:&quot; + id));</span>
+<span class="fc" id="L82">    	model.addAttribute(&quot;ruleName&quot;, ruleName);</span>
+<span class="fc" id="L83">    	return &quot;ruleName/update&quot;;</span>
     }
 
+    /**
+     * @Description method post for update ruleName
+     * @param id
+     * @param ruleName
+     * @param result
+     * @param model
+     * @return
+     */
     @PostMapping(&quot;/ruleName/update/{id}&quot;)
     public String updateRuleName(@PathVariable(&quot;id&quot;) Integer id, @Valid RuleName ruleName,
                              BindingResult result, Model model) {
-<span class="pc bpc" id="L67" title="1 of 2 branches missed.">    	if (!result.hasErrors()) {</span>
-<span class="fc" id="L68">			model.addAttribute(&quot;ruleName&quot;, ruleName);</span>
-<span class="fc" id="L69">			ruleNameService.updateBidList(id, ruleName);</span>
-<span class="fc" id="L70">			log.info(&quot;success for  update ruleName&quot;);</span>
-<span class="fc" id="L71">			return &quot;redirect:/ruleName/list&quot;;</span>
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">    	if (!result.hasErrors()) {</span>
+<span class="nc bnc" id="L98" title="All 2 branches missed.">    		if (ruleNameService.updateBidList(id, ruleName).getStatusCodeValue() != 200) {</span>
+<span class="nc" id="L99">    			  model.addAttribute(&quot;error&quot;, &quot;Sorry, error as occured&quot;);</span>
+			}
+<span class="nc" id="L101">			model.addAttribute(&quot;ruleName&quot;, ruleName);</span>
+<span class="nc" id="L102">			ruleNameService.updateBidList(id, ruleName);</span>
+<span class="nc" id="L103">			log.info(&quot;success for  update ruleName&quot;);</span>
+<span class="nc" id="L104">			return &quot;redirect:/ruleName/list&quot;;</span>
 		}
-<span class="nc" id="L73">    	 log.warn(&quot;error for  update ruleName&quot;);</span>
-<span class="nc" id="L74">    	 return &quot;ruleName/update&quot;;</span>
+<span class="nc" id="L106">    	 log.warn(&quot;error for  update ruleName&quot;);</span>
+<span class="nc" id="L107">    	 return &quot;ruleName/update&quot;;</span>
     }
 
+    /***
+     * @Description method get for delete ruleName
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping(&quot;/ruleName/delete/{id}&quot;)
     public String deleteRuleName(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="fc" id="L79">    	ruleNameService.deleteBidList(id);</span>
-<span class="fc" id="L80">		model.addAttribute(&quot;ruleName&quot;, ruleNameRepository.findAll());</span>
-<span class="fc" id="L81">		log.info(&quot;success for  delete ruleName&quot;);</span>
-<span class="fc" id="L82">        return &quot;redirect:/ruleName/list&quot;;</span>
+<span class="fc" id="L118">    	ruleNameService.deleteBidList(id);</span>
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">    	if (ruleNameService.deleteBidList(id).getStatusCodeValue() != 200) {</span>
+<span class="nc" id="L120">			  model.addAttribute(&quot;error&quot;, &quot;Sorry, error as occured&quot;);</span>
+		}
+<span class="fc" id="L122">		model.addAttribute(&quot;ruleName&quot;, ruleNameRepository.findAll());</span>
+<span class="fc" id="L123">		log.info(&quot;success for  delete ruleName&quot;);</span>
+<span class="fc" id="L124">        return &quot;redirect:/ruleName/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

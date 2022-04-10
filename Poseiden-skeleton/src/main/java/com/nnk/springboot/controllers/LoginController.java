@@ -17,6 +17,10 @@ public class LoginController {
 	@Autowired
 	UserRepository userRepository;
 
+	/**
+	 * @Description  * @Description build and display the authentication page, display the error message in case of bad authentication
+	 * @return
+	 */
 	@ExcludeFromJacocoGeneratedReport
     @GetMapping("login")
     public ModelAndView login() {
@@ -25,15 +29,11 @@ public class LoginController {
         return mav;
     }
 
-	@ExcludeFromJacocoGeneratedReport
-    @GetMapping("secure/article-details")
-    public ModelAndView getAllUserArticles() {
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("users", userRepository.findAll());
-        mav.setViewName("user/list");
-        return mav;
-    }
 
+	/**
+	 * @Description displays a custom 403 error page
+	 * @return
+	 */
 	@ExcludeFromJacocoGeneratedReport
     @GetMapping("error")
     public ModelAndView error() {

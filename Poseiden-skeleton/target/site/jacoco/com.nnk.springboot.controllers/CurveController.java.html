@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CurveController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">CurveController.java</span></div><h1>CurveController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CurveController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">poseidon</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">CurveController.java</span></div><h1>CurveController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.domain.BidList;
-import com.nnk.springboot.domain.CurvePoint;
-import com.nnk.springboot.repositories.CurvePointRepository;
-import com.nnk.springboot.services.CurvePointService;
+import javax.validation.Valid;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,10 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
+import com.nnk.springboot.domain.CurvePoint;
+import com.nnk.springboot.repositories.CurvePointRepository;
+import com.nnk.springboot.services.CurvePointService;
 
 @Controller
-<span class="fc" id="L22">public class CurveController {</span>
+<span class="fc" id="L21">public class CurveController {</span>
 
 	@Autowired
 	CurvePointService curvePointService;
@@ -27,58 +26,101 @@ import javax.validation.Valid;
 	@Autowired
 	CurvePointRepository curvePointRepository;
 
-<span class="fc" id="L30">	private static final Logger log = LogManager.getLogger(CurveController.class);</span>
+<span class="fc" id="L29">	private static final Logger log = LogManager.getLogger(CurveController.class);</span>
 
+	/**
+	 * @Description method get for list curvePoint
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(&quot;/curvePoint/list&quot;)
 	public String home(Model model) {
-<span class="fc" id="L34">		model.addAttribute(&quot;curvePoint&quot;, curvePointRepository.findAll());</span>
-<span class="fc" id="L35">		return &quot;curvePoint/list&quot;;</span>
+<span class="fc" id="L38">		model.addAttribute(&quot;curvePoint&quot;, curvePointRepository.findAll());</span>
+<span class="fc" id="L39">		return &quot;curvePoint/list&quot;;</span>
 	}
 
+	/**
+	 * @Description method for get page add curvePoint
+	 * @param bid
+	 * @return
+	 */
 	@GetMapping(&quot;/curvePoint/add&quot;)
 	public String addBidForm(CurvePoint bid) {
-<span class="fc" id="L40">		return &quot;curvePoint/add&quot;;</span>
+<span class="fc" id="L49">		return &quot;curvePoint/add&quot;;</span>
 	}
 
+	/**
+	 * @Description method post for add curvePoint
+	 * @param curvePoint
+	 * @param result
+	 * @param model
+	 * @return
+	 */
 	@PostMapping(&quot;/curvePoint/validate&quot;)
 	public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
-<span class="pc bpc" id="L45" title="1 of 2 branches missed.">		if (!result.hasErrors()) {</span>
-<span class="fc" id="L46">			model.addAttribute(&quot;curvePoint&quot;, curvePointService.addCurvePoint(curvePoint));</span>
-<span class="fc" id="L47">			model.addAttribute(&quot;curvePoint&quot;, curvePointRepository.findAll());</span>
-<span class="fc" id="L48">			log.info(&quot;success for  create curvePoint&quot;);</span>
-<span class="fc" id="L49">			return &quot;curvePoint/list&quot;;</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">		if (!result.hasErrors()) {</span>
+<span class="fc" id="L62">			model.addAttribute(&quot;curvePoint&quot;, curvePointService.addCurvePoint(curvePoint));</span>
+<span class="fc" id="L63">			model.addAttribute(&quot;curvePoint&quot;, curvePointRepository.findAll());</span>
+<span class="fc" id="L64">			log.info(&quot;success for  create curvePoint&quot;);</span>
+<span class="fc" id="L65">			return &quot;curvePoint/list&quot;;</span>
 		} else {
-<span class="nc" id="L51">			log.warn(&quot;error for  create curvePoint&quot;);</span>
-<span class="nc" id="L52">			return &quot;curvePoint/add&quot;;</span>
+<span class="nc" id="L67">			log.warn(&quot;error for  create curvePoint&quot;);</span>
+<span class="nc" id="L68">			return &quot;curvePoint/add&quot;;</span>
 		}
 	}
 
+	/**
+	 * @Description method for get page updateCurvePoint
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping(&quot;/curvePoint/update/{id}&quot;)
 	public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="pc" id="L58">		CurvePoint curvePoint = curvePointRepository.findById((long) id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid bidList Id:&quot; + id));</span>
-<span class="fc" id="L59">		model.addAttribute(&quot;curvePoint&quot;, curvePoint);</span>
-<span class="fc" id="L60">		return &quot;curvePoint/update&quot;;</span>
+<span class="pc" id="L80">		CurvePoint curvePoint = curvePointRepository.findById((long) id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid bidList Id:&quot; + id));</span>
+<span class="fc" id="L81">		model.addAttribute(&quot;curvePoint&quot;, curvePoint);</span>
+<span class="fc" id="L82">		return &quot;curvePoint/update&quot;;</span>
 	}
 
+	/**
+	 * @Description method post for update curvePoint
+	 * @param id
+	 * @param curvePoint
+	 * @param result
+	 * @param model
+	 * @return
+	 */
 	@PostMapping(&quot;/curvePoint/update/{id}&quot;)
 	public String updateBid(@PathVariable(&quot;id&quot;) Integer id, @Valid CurvePoint curvePoint, BindingResult result,
 			Model model) {
-<span class="pc bpc" id="L66" title="1 of 2 branches missed.">		if (!result.hasErrors()) {</span>
-<span class="fc" id="L67">			model.addAttribute(&quot;curvePoint&quot;, curvePoint);</span>
-<span class="fc" id="L68">			curvePointService.updateCurvePoint(id, curvePoint);</span>
-<span class="fc" id="L69">			log.info(&quot;success for  update curvePoint&quot;);</span>
-<span class="fc" id="L70">			return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">		if (!result.hasErrors()) {</span>
+<span class="fc" id="L97">			model.addAttribute(&quot;curvePoint&quot;, curvePoint);</span>
+<span class="fc" id="L98">			curvePointService.updateCurvePoint(id, curvePoint);</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">			if (curvePointService.updateCurvePoint(id, curvePoint).getStatusCodeValue() != 200) {</span>
+<span class="nc" id="L100">				  model.addAttribute(&quot;error&quot;, &quot;Sorry, error as occured&quot;);</span>
+			}
+<span class="nc" id="L102">			log.info(&quot;success for  update curvePoint&quot;);</span>
+<span class="nc" id="L103">			return &quot;redirect:/curvePoint/list&quot;;</span>
 		}
-<span class="nc" id="L72">		log.info(&quot;error for  update curvePoint&quot;);</span>
-<span class="nc" id="L73">		return &quot;curvePoint/update&quot;;</span>
+<span class="nc" id="L105">		log.info(&quot;error for  update curvePoint&quot;);</span>
+<span class="nc" id="L106">		return &quot;curvePoint/update&quot;;</span>
 	}
 
+	/**
+	 * @Description method get for delete CurvePoint
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping(&quot;/curvePoint/delete/{id}&quot;)
 	public String deleteBid(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="fc" id="L78">		curvePointService.deleteCurvePoint(id);</span>
-<span class="fc" id="L79">		model.addAttribute(&quot;curvePoint&quot;, curvePointRepository.findAll());</span>
-<span class="fc" id="L80">		log.info(&quot;success for  delete curvePoint&quot;);</span>
-<span class="fc" id="L81">		return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L117">		curvePointService.deleteCurvePoint(id);</span>
+<span class="nc bnc" id="L118" title="All 2 branches missed.">		if (curvePointService.deleteCurvePoint(id).getStatusCodeValue() != 200) {</span>
+<span class="nc" id="L119">			  model.addAttribute(&quot;error&quot;, &quot;Sorry, error as occured&quot;);</span>
+		}
+<span class="nc" id="L121">		model.addAttribute(&quot;curvePoint&quot;, curvePointRepository.findAll());</span>
+<span class="nc" id="L122">		log.info(&quot;success for  delete curvePoint&quot;);</span>
+<span class="nc" id="L123">		return &quot;redirect:/curvePoint/list&quot;;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

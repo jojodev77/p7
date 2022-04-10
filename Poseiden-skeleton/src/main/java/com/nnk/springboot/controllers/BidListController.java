@@ -31,7 +31,7 @@ public class BidListController {
 	private static final Logger log = LogManager.getLogger(BidListController.class);
 
 	/**
-	 * @Description methog get for page list of bidList
+	 * @Description methog get for page list of bidList, get list bidlist for repository.
 	 * @param model
 	 * @return
 	 */
@@ -43,7 +43,7 @@ public class BidListController {
     }
 
     /**
-     * @Description method get page create bidList
+     * @Description method get page create bidList, build and create forms
      * @param bid
      * @return
      */
@@ -53,7 +53,9 @@ public class BidListController {
     }
 
     /***
-     * @Description method post for create bidList
+     * @Description method post for create bidList,
+	 * call method addRating in service and call list  from repository with new creation when create is success,
+	 * if error, a log.warn is visibility in console and an error message is displayed on the user side
      * @param bid
      * @param result
      * @param model
@@ -68,7 +70,8 @@ public class BidListController {
     }
 
     /**
-     * @Description method get for page update bidList
+     * @Description method get for page update bidList,
+this view builds a form by inserting the data of the object modified thanks to its id
      * @param id
      * @param model
      * @return
@@ -81,7 +84,8 @@ public class BidListController {
     }
 
     /**
-     * @Description method post for update bidList
+     * @Description method post for update bidListchecks the correct conformity of the expected values, calls the update method in the service, if the update is successful,
+	 *  it returns to the updated list, otherwise an error is displayed on the consoles and users side
      * @param id
      * @param bidList
      * @param result
@@ -93,6 +97,7 @@ public class BidListController {
                              BindingResult result, Model model) {
 			model.addAttribute("bidList", bidList );
 			bidListService.updateBidList(id, bidList);
+			// check the solution is compliant
 			if (bidListService.updateBidList(id, bidList).getStatusCodeValue() != 200) {
 				  model.addAttribute("error", "Sorry, error as occured");
 			}
@@ -101,7 +106,8 @@ public class BidListController {
     }
 
     /**
-     * @Description method get for delete bidList
+     * @Description method get for delete bidList,calls the delete method deleteById in the service, if the deletion is successful, it returns to the updated list, 
+     * otherwise an error is displayed on the console and user side
      * @param id
      * @param model
      * @return
@@ -109,6 +115,7 @@ public class BidListController {
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
     	bidListService.deleteBidList(id);
+    	// check the solution is compliant
     	if (bidListService.deleteBidList(id).getStatusCodeValue() != 200) {
 			  model.addAttribute("error", "Sorry, error as occured");
 		}

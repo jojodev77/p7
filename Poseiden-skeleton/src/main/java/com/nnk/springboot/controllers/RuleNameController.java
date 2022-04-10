@@ -29,19 +29,20 @@ public class RuleNameController {
 	private static final Logger log = LogManager.getLogger(RuleNameController.class);
 
 	/**
-	 * @Description get list ruleName
+	 * @Description get list ruleName, , get list ruleName for repository. 
 	 * @param model
 	 * @return
 	 */
     @RequestMapping("/ruleName/list")
     public String home(Model model)
     {
+    	// get and passation object beetween front and service
     	model.addAttribute("ruleName", ruleNameRepository.findAll());
         return "ruleName/list";
     }
 
     /**
-     * @Description get page from add ruleName
+     * @Description get page from add ruleName, build and create forms
      * @param bid
      * @return
      */
@@ -51,7 +52,9 @@ public class RuleNameController {
     }
 
     /**
-     * @Description method post for create ruleName
+     * @Description method post for create ruleName,
+	 * call method addRating in service and call list  from repository with new creation when create is success,
+	 * if error, a log.warn is visibility in console and an error message is displayed on the user side
      * @param ruleName
      * @param result
      * @param model
@@ -59,7 +62,9 @@ public class RuleNameController {
      */
     @PostMapping("/ruleName/validate")
     public String validate(@Valid RuleName ruleName, BindingResult result, Model model) {
+    	// check the solution is compliant
     	if (!result.hasErrors()) {
+    		// get and passation object beetween front and service
 			model.addAttribute("ruleName", ruleNameService.addBidList(ruleName));
 			model.addAttribute("ruleName", ruleNameRepository.findAll());
 			log.info("success for  create ruleName");
@@ -71,7 +76,8 @@ public class RuleNameController {
     }
 
     /**
-     * @Decsription method get for page update ruleName
+     * @Decsription method get for page update ruleName, 
+this view builds a form by inserting the data of the object modified thanks to its id
      * @param id
      * @param model
      * @return
@@ -79,12 +85,14 @@ public class RuleNameController {
     @GetMapping("/ruleName/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
     	RuleName ruleName = ruleNameRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid ruleName Id:" + id));
+    	// get and passation object beetween front and service
     	model.addAttribute("ruleName", ruleName);
     	return "ruleName/update";
     }
 
     /**
-     * @Description method post for update ruleName
+     * @Description method post for update ruleNamechecks the correct conformity of the expected values, calls the update method in the service, if the update is successful,
+	 *  it returns to the updated list, otherwise an error is displayed on the consoles and users side
      * @param id
      * @param ruleName
      * @param result
@@ -94,10 +102,12 @@ public class RuleNameController {
     @PostMapping("/ruleName/update/{id}")
     public String updateRuleName(@PathVariable("id") Integer id, @Valid RuleName ruleName,
                              BindingResult result, Model model) {
+    	// check the solution is compliant
     	if (!result.hasErrors()) {
     		if (ruleNameService.updateBidList(id, ruleName).getStatusCodeValue() != 200) {
     			  model.addAttribute("error", "Sorry, error as occured");
 			}
+    		// get and passation object beetween front and service
 			model.addAttribute("ruleName", ruleName);
 			ruleNameService.updateBidList(id, ruleName);
 			log.info("success for  update ruleName");
@@ -108,7 +118,8 @@ public class RuleNameController {
     }
 
     /***
-     * @Description method get for delete ruleName
+     * @Description method get for delete ruleName,calls the delete method deleteById in the service, if the deletion is successful, it returns to the updated list, 
+     * otherwise an error is displayed on the console and user side
      * @param id
      * @param model
      * @return
@@ -116,9 +127,12 @@ public class RuleNameController {
     @GetMapping("/ruleName/delete/{id}")
     public String deleteRuleName(@PathVariable("id") Integer id, Model model) {
     	ruleNameService.deleteBidList(id);
+    	// check the solution is compliant
     	if (ruleNameService.deleteBidList(id).getStatusCodeValue() != 200) {
+    		// get and passation object beetween front and service
 			  model.addAttribute("error", "Sorry, error as occured");
 		}
+    	// get and passation object beetween front and service
 		model.addAttribute("ruleName", ruleNameRepository.findAll());
 		log.info("success for  delete ruleName");
         return "redirect:/ruleName/list";

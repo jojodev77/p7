@@ -30,19 +30,20 @@ public class TradeController {
 	private static final Logger log = LogManager.getLogger(TradeController.class);
 
 	/**
-	 * @Description method for get list trade
+	 * @Description method for get list trade, get list trade for repository.
 	 * @param model
 	 * @return
 	 */
     @RequestMapping("/trade/list")
     public String home(Model model)
     {
+    	// get and passation object beetween front and service
     	model.addAttribute("trade", tradeRepository.findAll());
         return "trade/list";
     }
 
     /**
-     * @Description method get for page add trade
+     * @Description method get for page add trade, build and create forms
      * @param bid
      * @return
      */
@@ -52,7 +53,9 @@ public class TradeController {
     }
 
     /**
-     * @Description method post for add trade
+     * @Description method post for add trade,
+	 * call method addRating in service and call list  from repository with new creation when create is success,
+	 * if error, a log.warn is visibility in console and an error message is displayed on the user side
      * @param trade
      * @param result
      * @param model
@@ -60,7 +63,7 @@ public class TradeController {
      */
     @PostMapping("/trade/validate")
     public String validate(@Valid Trade trade, BindingResult result, Model model) {
-    	
+    	// get and passation object beetween front and service
 			model.addAttribute("trade", tradeService.addRrade(trade));
 			model.addAttribute("trade", tradeRepository.findAll());
 			log.info("success for  create trade");
@@ -69,7 +72,8 @@ public class TradeController {
     }
 
     /**
-     * @Description method get for page update trade
+     * @Description method get for page update trade,
+this view builds a form by inserting the data of the object modified thanks to its id
      * @param id
      * @param model
      * @return
@@ -77,13 +81,15 @@ public class TradeController {
     @GetMapping("/trade/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
     	Trade trade = tradeRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid trade Id:" + id));
+    	// get and passation object beetween front and service
     	model.addAttribute("trade", trade);
         return "trade/update";
     }
     
 
     /**
-     * @Description method post for update trade
+     * @Description method post for update tradechecks the correct conformity of the expected values, calls the update method in the service, if the update is successful,
+	 *  it returns to the updated list, otherwise an error is displayed on the consoles and users side
      * @param id
      * @param trade
      * @param result
@@ -95,6 +101,7 @@ public class TradeController {
                              BindingResult result, Model model) {
 			model.addAttribute("trade", trade);
 			tradeService.updateTrade(id, trade);
+			// check the solution is compliant
 			if (tradeService.updateTrade(id, trade).getStatusCodeValue() != 200) {
 				  model.addAttribute("error", "Sorry, error as occured");
 			}
@@ -103,7 +110,8 @@ public class TradeController {
     }
 
     /**
-     * @Description method get for delete trade
+     * @Description method get for delete trade,calls the delete method deleteById in the service, if the deletion is successful, it returns to the updated list, 
+     * otherwise an error is displayed on the console and user side
      * @param id
      * @param model
      * @return
@@ -111,6 +119,7 @@ public class TradeController {
     @GetMapping("/trade/delete/{id}")
     public String deleteTrade(@PathVariable("id") Integer id, Model model) {
     	tradeService.deleteTrade(id);
+    	// check the solution is compliant
     	if (tradeService.deleteTrade(id).getStatusCodeValue() != 200) {
 			  model.addAttribute("error", "Sorry, error as occured");
 		}

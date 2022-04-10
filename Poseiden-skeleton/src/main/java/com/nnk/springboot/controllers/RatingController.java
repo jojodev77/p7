@@ -36,12 +36,13 @@ public class RatingController {
 	 */
 	@RequestMapping("/rating/list")
 	public String home(Model model) {
+		// get and passation object beetween front and service
 		model.addAttribute("rating", ratingRepository.findAll());
 		return "rating/list";
 	}
 
 	/**
-	 * @Description method get for page add rating
+	 * @Description method get for page add rating, build and create forms
 	 * @param rating
 	 * @return
 	 */
@@ -51,7 +52,9 @@ public class RatingController {
 	}
 
 	/***
-	 * @Description method post for add rating
+	 * @Description method post for add rating,
+	 * call method addRating in service and call list  from repository with new creation when create is success,
+	 * if error, a log.warn is visibility in console and an error message is displayed on the user side
 	 * @param rating
 	 * @param result
 	 * @param model
@@ -59,7 +62,9 @@ public class RatingController {
 	 */
 	@PostMapping("/rating/validate")
 	public String validate(@Valid Rating rating, BindingResult result, Model model) {
+		// check the solution is compliant
 		if (!result.hasErrors()) {
+			// get and passation object beetween front and service
 			model.addAttribute("rating", ratingService.addRating(rating));
 			model.addAttribute("rating", ratingRepository.findAll());
 			log.info("success for  create rating");
@@ -72,7 +77,8 @@ public class RatingController {
 	}
 
 	/**
-	 * @Description method get for page update rating
+	 * @Description method get for page update rating,
+this view builds a form by inserting the data of the object modified thanks to its id
 	 * @param id
 	 * @param model
 	 * @return
@@ -80,13 +86,15 @@ public class RatingController {
 	@GetMapping("/rating/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		Rating rating = ratingRepository.findById((long) id).orElseThrow(() -> new IllegalArgumentException("Invalid rating Id:" + id));
+		// get and passation object beetween front and service
 		model.addAttribute("rating", rating);
 		return "rating/update";
 	}
 	
 
 	/**
-	 * @Descriptiion method post for uupdate rating
+	 * @Descriptiion method post for update rating,retrieves the content of the form, checks the correct conformity of the expected values, calls the update method in the service, if the update is successful,
+	 *  it returns to the updated list, otherwise an error is displayed on the consoles and users side
 	 * @param id
 	 * @param rating
 	 * @param result
@@ -96,9 +104,12 @@ public class RatingController {
 	@PostMapping("/rating/update/{id}")
 	public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating, BindingResult result,
 			Model model) {
+		// check the solution is compliant
 		if (!result.hasErrors()) {
+			// get and passation object beetween front and service
 			model.addAttribute("rating", rating);
 			ratingService.updateRating(id, rating);
+			// check the solution is compliant
 			if (ratingService.updateRating(id, rating).getStatusCodeValue() != 200) {
 				  model.addAttribute("error", "Sorry, error as occured");
 			}
@@ -110,7 +121,8 @@ public class RatingController {
 	}
 
 	/**
-	 * @Description Method get for delete rating
+	 * @Description Method get for delete rating,calls the delete method deleteById in the service, if the deletion is successful, it returns to the updated list, 
+     * otherwise an error is displayed on the console and user side
 	 * @param id
 	 * @param model
 	 * @return
@@ -118,9 +130,12 @@ public class RatingController {
 	@GetMapping("/rating/delete/{id}")
 	public String deleteRating(@PathVariable("id") long id, Model model) {
 		ratingService.deleteRating(id);
+		// check the solution is compliant
 		if (ratingService.deleteRating(id).getStatusCodeValue() != 200) {
+			// get and passation object beetween front and service
 			  model.addAttribute("error", "Sorry, error as occured");
 		}
+		// get and passation object beetween front and service
 		model.addAttribute("rating", ratingRepository.findAll());
 		log.info("success for  delete rating");
 		return "redirect:/rating/list";

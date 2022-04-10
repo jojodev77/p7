@@ -29,7 +29,7 @@ public class CurveController {
 	private static final Logger log = LogManager.getLogger(CurveController.class);
 
 	/**
-	 * @Description method get for list curvePoint
+	 * @Description method get for list curvePoint, get list curvepoint for repository.
 	 * @param model
 	 * @return
 	 */
@@ -40,7 +40,7 @@ public class CurveController {
 	}
 
 	/**
-	 * @Description method for get page add curvePoint
+	 * @Description method for get page add curvePoint, build and create forms
 	 * @param bid
 	 * @return
 	 */
@@ -50,7 +50,9 @@ public class CurveController {
 	}
 
 	/**
-	 * @Description method post for add curvePoint
+	 * @Description method post for add curvePoint,
+	 * call method addRating in service and call list  from repository with new creation when create is success,
+	 * if error, a log.warn is visibility in console and an error message is displayed on the user side
 	 * @param curvePoint
 	 * @param result
 	 * @param model
@@ -58,6 +60,7 @@ public class CurveController {
 	 */
 	@PostMapping("/curvePoint/validate")
 	public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
+		// check the solution is compliant
 		if (!result.hasErrors()) {
 			model.addAttribute("curvePoint", curvePointService.addCurvePoint(curvePoint));
 			model.addAttribute("curvePoint", curvePointRepository.findAll());
@@ -70,7 +73,8 @@ public class CurveController {
 	}
 
 	/**
-	 * @Description method for get page updateCurvePoint
+	 * @Description method for get page updateCurvePoint,
+this view builds a form by inserting the data of the object modified thanks to its id
 	 * @param id
 	 * @param model
 	 * @return
@@ -83,7 +87,8 @@ public class CurveController {
 	}
 
 	/**
-	 * @Description method post for update curvePoint
+	 * @Description method post for update curvePointchecks the correct conformity of the expected values, calls the update method in the service, if the update is successful,
+	 *  it returns to the updated list, otherwise an error is displayed on the consoles and users side
 	 * @param id
 	 * @param curvePoint
 	 * @param result
@@ -93,6 +98,7 @@ public class CurveController {
 	@PostMapping("/curvePoint/update/{id}")
 	public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint, BindingResult result,
 			Model model) {
+		// check the solution is compliant
 		if (!result.hasErrors()) {
 			model.addAttribute("curvePoint", curvePoint);
 			curvePointService.updateCurvePoint(id, curvePoint);
@@ -107,7 +113,8 @@ public class CurveController {
 	}
 
 	/**
-	 * @Description method get for delete CurvePoint
+	 * @Description method get for delete CurvePoint,calls the delete method deleteById in the service, if the deletion is successful, it returns to the updated list, 
+     * otherwise an error is displayed on the console and user side
 	 * @param id
 	 * @param model
 	 * @return
